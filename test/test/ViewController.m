@@ -13,23 +13,26 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    UIImageView * myImageView;
+    UIPageControl * myPageControl;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
-    red.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:red];
-    [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    UIButton * yell = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
-    yell.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:yell];
-    [yell addTarget:self action:@selector(yell:) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
+//    red.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:red];
+//    [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    
+//    UIButton * yell = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
+//    yell.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:yell];
+//    [yell addTarget:self action:@selector(yell:) forControlEvents:UIControlEventTouchUpInside];
     
     
     //子线程下载显示图片
@@ -52,7 +55,7 @@
     [self.view addSubview:test];
 */
     
-    
+ /*
     
     UIImageView * test1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, 200, 200)];
     UIImageView * test2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 400, 200, 200)];
@@ -100,8 +103,98 @@
     [self.view addSubview:test2];
     [self.view addSubview:test3];
     
+  */
     
     
+    /*
+    [self scrollView];
+    */
+
+    
+    /*
+     [self pageControl];
+     */
+
+}
+
+
+
+-(void)scrollView{
+    UIScrollView * myScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    
+    UIImageView * ImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pere_david_s_deer-002.jpg"]];
+    
+    myScrollView.contentSize = ImageView.bounds.size;
+    
+    [myScrollView addSubview:ImageView];
+    
+    [self.view addSubview:myScrollView];
+}
+
+
+-(void)pageControl{
+    
+    myImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pere_david_s_deer-002.jpg"]];
+    
+    [myImageView setFrame:CGRectMake(0, 0, 320, 300)];
+    
+    [self.view addSubview:myImageView];
+    
+    
+    myPageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(100, 500, 100, 100)];
+    myPageControl.pageIndicatorTintColor = [UIColor redColor];
+    myPageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    myPageControl.numberOfPages = 10;
+    [self.view addSubview:myPageControl];
+    
+    [myPageControl addTarget:self action:@selector(changPC:) forControlEvents:UIControlEventValueChanged];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(run)  userInfo:nil repeats:YES];
+    
+}
+
+-(void)changPC:(UIPageControl *)sender{
+    
+    if (sender.currentPage%2 == 0) {
+        
+        
+        [UIView animateWithDuration:2 animations:^{
+                    myImageView.image = [UIImage imageNamed:@"DSC01425.jpg"];
+   
+        }];
+        
+        
+
+    }else{
+        
+        [UIView animateWithDuration:2 animations:^{
+                   myImageView.image = [UIImage imageNamed:@"DSC01529.jpg"];
+            
+        }];
+ 
+    }
+    
+
+
+}
+
+
+
+
+
+
+-(void)run{
+    if (myPageControl.currentPage%2 == 0) {
+        myImageView.image = [UIImage imageNamed:@"DSC01425.jpg"];
+    }else{
+        myImageView.image = [UIImage imageNamed:@"DSC01529.jpg"];
+    }
+    
+    myPageControl.currentPage++;
+    
+    if (myPageControl.currentPage == myPageControl.numberOfPages-1) {
+        myPageControl.currentPage = 0;
+    }
 }
 
 
