@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AddressBook/AddressBook.h>
+#import "testclass.h"
 
 @interface ViewController ()
 
@@ -23,16 +24,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-//    UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
-//    red.backgroundColor = [UIColor grayColor];
-//    [self.view addSubview:red];
-//    [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    
-//    UIButton * yell = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
-//    yell.backgroundColor = [UIColor grayColor];
-//    [self.view addSubview:yell];
-//    [yell addTarget:self action:@selector(yell:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
+    red.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:red];
+    [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIButton * yell = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
+    yell.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:yell];
+    [yell addTarget:self action:@selector(yell:) forControlEvents:UIControlEventTouchUpInside];
     
     
     //子线程下载显示图片
@@ -45,6 +46,33 @@
 /*
     [self groupImage];
 */
+    
+    
+    
+/*
+     [self scrollView];
+*/
+    
+    
+/*
+     [self pageControl];
+*/
+
+    
+    testclass * p = [[testclass alloc]init];
+    p.bType = YES;
+    
+    NSMutableString * test = [[NSMutableString alloc]initWithString:@"!!!!!!"];
+    p.p = test;
+    
+    [test appendString:@"++++"];
+    
+    
+    NSLog(@"%p",p.p);
+    NSLog(@"%p",test);
+    
+    
+    NSLog(@"%@",p.p);
     
     
 }
@@ -68,10 +96,6 @@
 
     
     [self.view addSubview:test];
-
-
-    
-   
 
 
 }
@@ -124,16 +148,6 @@
     [self.view addSubview:test2];
     [self.view addSubview:test3];
 
-    
-    
-    /*
-    [self scrollView];
-    */
-
-    
-    /*
-     [self pageControl];
-     */
 
 }
 
