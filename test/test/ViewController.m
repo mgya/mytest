@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <AddressBook/AddressBook.h>
-#import "testclass.h"
+
 
 @interface ViewController ()
 
@@ -19,7 +19,17 @@
     UIPageControl * myPageControl;
 }
 
+@synthesize test = _test;
+
 - (void)viewDidLoad {
+    
+    
+    
+    NSLog(@"%@",[self class]);
+    NSLog(@"%@",[super class]);
+    
+    
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -48,7 +58,6 @@
 */
     
     
-
 /*
      [self scrollView];
 */
@@ -57,9 +66,9 @@
 /*
      [self pageControl];
 */
+    
+    [self delegate];
 
-    
-    
 }
 
 
@@ -193,6 +202,14 @@
 
 
 
+-(void)setTest:(NSString *)test{
+    
+}
+
+-(NSString*)test{
+    return @"!!";
+}
+
 
 
 -(void)run{
@@ -207,6 +224,7 @@
     if (myPageControl.currentPage == myPageControl.numberOfPages-1) {
         myPageControl.currentPage = 0;
     }
+    _test = @"d";
 }
 
 
@@ -221,6 +239,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)delegate{
+    testclass * p = [[testclass alloc]init];
+    p.delegate = self;
+    [p runTest];
+}
+
+-(void)print:(NSString *)input{
+    NSLog(@"====%@====",input);
 }
 
 @end
