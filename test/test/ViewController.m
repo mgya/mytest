@@ -47,6 +47,16 @@
 */
     
     
+/*
+     [self scrollView];
+*/
+    
+    
+/*
+     [self pageControl];
+*/
+    
+    
 }
 
 
@@ -68,12 +78,6 @@
 
     
     [self.view addSubview:test];
-
-
-    
-   
-
-
 }
 
 -(void)groupImage{
@@ -124,17 +128,6 @@
     [self.view addSubview:test2];
     [self.view addSubview:test3];
 
-    
-    
-    /*
-    [self scrollView];
-    */
-
-    
-    /*
-     [self pageControl];
-     */
-
 }
 
 
@@ -182,8 +175,7 @@
                     myImageView.image = [UIImage imageNamed:@"DSC01425.jpg"];
    
         }];
-        
-        
+
 
     }else{
         
@@ -191,11 +183,7 @@
                    myImageView.image = [UIImage imageNamed:@"DSC01529.jpg"];
             
         }];
- 
     }
-    
-
-
 }
 
 
