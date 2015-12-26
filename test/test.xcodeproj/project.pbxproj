@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C814F8781C2AE73F00274CAF /* testclass.m in Sources */ = {isa = PBXBuildFile; fileRef = C814F8771C2AE73F00274CAF /* testclass.m */; };
 		C82B9C241C1DB27800FBBDEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C231C1DB27800FBBDEB /* main.m */; };
 		C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C261C1DB27800FBBDEB /* AppDelegate.m */; };
 		C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C291C1DB27800FBBDEB /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C814F8761C2AE73F00274CAF /* testclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testclass.h; sourceTree = "<group>"; };
+		C814F8771C2AE73F00274CAF /* testclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testclass.m; sourceTree = "<group>"; };
 		C82B9C1F1C1DB27800FBBDEB /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82B9C231C1DB27800FBBDEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C82B9C251C1DB27800FBBDEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				C82B9C301C1DB27800FBBDEB /* LaunchScreen.storyboard */,
 				C82B9C331C1DB27800FBBDEB /* Info.plist */,
 				C82B9C221C1DB27800FBBDEB /* Supporting Files */,
+				C814F8761C2AE73F00274CAF /* testclass.h */,
+				C814F8771C2AE73F00274CAF /* testclass.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C814F8781C2AE73F00274CAF /* testclass.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,
 				C82B9C241C1DB27800FBBDEB /* main.m in Sources */,
