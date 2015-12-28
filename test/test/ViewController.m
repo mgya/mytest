@@ -17,6 +17,7 @@
 @implementation ViewController{
     UIImageView * myImageView;
     UIPageControl * myPageControl;
+    NSString *noBlock;
 }
 
 - (void)viewDidLoad {
@@ -58,21 +59,56 @@
      [self pageControl];
 */
 
+    [self myBlock];
+
     
-    testclass * p = [[testclass alloc]init];
-    p.bType = YES;
+}
+
+
+
+-(void)myBlock{
     
-    NSMutableString * test = [[NSMutableString alloc]initWithString:@"!!!!!!"];
-    p.p = test;
-    
-    [test appendString:@"++++"];
-    
-    
-    NSLog(@"%p",p.p);
-    NSLog(@"%p",test);
+    NSString * str1 = @"str1";
+    NSMutableString  * str2= [NSMutableString stringWithFormat:@"str2"];
+    int a = 10;
     
     
-    NSLog(@"%@",p.p);
+    noBlock = @"init";
+    
+    
+    NSLog(@"初始化%@%p---%@%p",str1,str1,str2,str2);
+    
+    void (^wxt)();
+    
+    wxt = ^(){
+        
+    };
+    
+    
+    void(^testblock)() = ^(){
+         NSLog(@"block里%@%p--!!!!-%@%p",str1,str1,str2,str2);
+        NSLog(@"block里a = %d",a);
+        
+        
+        NSLog(@"inblock = %@",noBlock);
+        noBlock  = @"inblock";
+        NSLog(@"outblock = %@",noBlock);
+    };
+    
+    noBlock = @"updata";
+    
+    str1 = @"hahha111";
+    [str2 appendString:@"2222222"];
+    
+    a=100;
+    
+      NSLog(@"赋值%@%p--!!!!-%@%p",str1,str1,str2,str2);
+    
+    
+    testblock();
+     NSLog(@"block后%@%p--!++++!-%@%p",str1,str1,str2,str2);
+    
+    
     
     
 }
@@ -196,8 +232,6 @@
                     myImageView.image = [UIImage imageNamed:@"DSC01425.jpg"];
    
         }];
-        
-        
 
     }else{
         
@@ -207,8 +241,6 @@
         }];
  
     }
-    
-
 
 }
 
