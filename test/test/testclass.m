@@ -17,6 +17,20 @@
     _bType = type;
 }
 
+
+-(id)init{
+   self = [super init];
+
+    
+    
+    return self;
+}
+
+-(void)runTest{
+    [self.delegate print:@"23435"];
+
+}
+
 @end
 
 

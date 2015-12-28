@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <AddressBook/AddressBook.h>
-#import "testclass.h"
+
 
 @interface ViewController ()
 
@@ -20,7 +20,17 @@
     NSString *noBlock;
 }
 
+@synthesize test = _test;
+
 - (void)viewDidLoad {
+    
+    
+    
+    NSLog(@"%@",[self class]);
+    NSLog(@"%@",[super class]);
+    
+    
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -49,7 +59,6 @@
 */
     
     
-    
 /*
      [self scrollView];
 */
@@ -59,6 +68,10 @@
      [self pageControl];
 */
 
+    
+    [self delegate];
+    
+    
     [self myBlock];
 
     
@@ -108,9 +121,10 @@
     testblock();
      NSLog(@"block后%@%p--!++++!-%@%p",str1,str1,str2,str2);
     
+
     
-    
-    
+
+
 }
 
 
@@ -132,8 +146,6 @@
 
     
     [self.view addSubview:test];
-
-
 }
 
 -(void)groupImage{
@@ -233,19 +245,28 @@
    
         }];
 
+
     }else{
         
         [UIView animateWithDuration:2 animations:^{
                    myImageView.image = [UIImage imageNamed:@"DSC01529.jpg"];
             
         }];
- 
     }
 
 }
 
 
 
+
+
+-(void)setTest:(NSString *)test{
+    
+}
+
+-(NSString*)test{
+    return @"!!";
+}
 
 
 
@@ -261,6 +282,7 @@
     if (myPageControl.currentPage == myPageControl.numberOfPages-1) {
         myPageControl.currentPage = 0;
     }
+    _test = @"d";
 }
 
 
@@ -275,6 +297,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)delegate{
+    testclass * p = [[testclass alloc]init];
+    p.delegate = self;
+    [p runTest];
+}
+
+-(void)print:(NSString *)input{
+    NSLog(@"====%@====",input);
 }
 
 @end

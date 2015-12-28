@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "testclass.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<testdelegate>
 
+
+@property(nonatomic,strong)NSString * test ;
 
 @end
 

@@ -8,12 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface testclass : NSObject
 
+@protocol testdelegate <NSObject>
+
+-(void)print:(NSString*)input;
+
+@end
+
+
+@interface testclass : NSObject
 
 
 @property(assign,nonatomic)BOOL bType;
 
 @property(copy,nonatomic)NSString * p;
+
+@property(nonatomic,assign)id<testdelegate>delegate;
+
+-(void)runTest;
 
 @end
