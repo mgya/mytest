@@ -10,6 +10,7 @@
 #import <AddressBook/AddressBook.h>
 
 
+
 @interface ViewController ()
 
 @end
@@ -18,6 +19,10 @@
     UIImageView * myImageView;
     UIPageControl * myPageControl;
     NSString *noBlock;
+    
+    NSInteger all;
+    NSInteger alled;
+    NSLock * pLock;
 }
 
 @synthesize test = _test;
@@ -47,10 +52,13 @@
     [yell addTarget:self action:@selector(yell:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    //子线程下载显示图片
-/*
-    [self loadImage];
-*/
+    myImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DSC01425.JPG"]];
+    
+    [myImageView setFrame:CGRectMake(100, 400, 320, 300)];
+    
+    [self.view addSubview:myImageView];
+    
+
     
     
     //组线程，同时下载多个图片
@@ -69,14 +77,106 @@
 */
 
     
-    [self delegate];
+//    [self delegate];
     
     
-    [self myBlock];
+//    [self myBlock];
+    
+    
+//    [self myNSInvocationOperation];
+
+ //   [self myThread];
+    
+    //子线程下载显示图片
+/*
+     [self myGCD];
+ */
+    
+    //卖票锁演示
+   
+    all = 100;
+    pLock = [[NSLock alloc]init];
+    [self myLock];
+
+    
+    /*NSThread
+    [self performSelectorInBackground:@selector(longTime:) withObject:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
+    */
+    NSLog(@"mainend");
+}
+
+
+-(void)myLock{
+    
+    NSThread * p1 = [[NSThread alloc]initWithTarget:self selector:@selector(bill) object:nil];
+    NSThread * p2 = [[NSThread alloc]initWithTarget:self selector:@selector(bill) object:nil];
+    NSThread * p3 = [[NSThread alloc]initWithTarget:self selector:@selector(bill) object:nil];
+    
+    [p1 setName:@"线程1"];
+    [p2 setName:@"线程2"];
+    [p3 setName:@"线程3"];
+    
+    [p1 start];
+    [p2 start];
+    [p3 start];
+    
+}
+
+-(void)bill{
+    for (; ; ) {
+    //   [pLock lock];
+       @synchronized(self){
+        if (all > 0) {
+            [NSThread sleepForTimeInterval:0.01];
+            all --;
+            alled = 100 - all;
+            NSLog(@"卖出去%zd  还剩下%zd 线程%@",alled,all,[[NSThread currentThread] name]);
+        }else{
+            break;
+        }
+      //  [pLock unlock];
+    }
+    }
+}
+
+
+-(void)myThread{
+//    [NSThread detachNewThreadSelector:@selector(longTime:) toTarget:self withObject:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
+    
+    NSThread* myThread = [[NSThread alloc] initWithTarget:self
+                                                   selector:@selector(longTime:)
+                                                     object:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
+    [myThread start];
+}
+
+
+-(void)myNSInvocationOperation{
+    
+    
+    NSString * url = @"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg";
+    NSInvocationOperation * myTest = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(longTime:) object:url];
+    NSOperationQueue * queue = [[NSOperationQueue alloc]init];
+    [queue addOperation:myTest];
 
     
 }
 
+-(void)longTime:(NSString*)url{
+    NSURL * nsUrl = [NSURL URLWithString:url];
+    NSData * nsData = [[NSData alloc]initWithContentsOfURL:nsUrl];
+    UIImage * pImage = [[UIImage alloc]initWithData:nsData];
+    
+    [self performSelectorOnMainThread:@selector(updateImage:) withObject:pImage waitUntilDone:YES];
+    
+    NSLog(@"end");
+}
+
+-(void)updateImage:(UIImage *) pImage{
+    NSLog(@"start");
+
+    myImageView.image = pImage;
+
+}
 
 
 -(void)myBlock{
@@ -120,16 +220,12 @@
     
     testblock();
      NSLog(@"block后%@%p--!++++!-%@%p",str1,str1,str2,str2);
-    
-
-    
-
 
 }
 
 
 
--(void)loadImage{
+-(void)myGCD{
     UIImageView * test = [[UIImageView alloc]initWithFrame:CGRectMake(0, 300, 300, 500)];
     NSURL * url = [NSURL URLWithString:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
     
