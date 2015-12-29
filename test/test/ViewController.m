@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AddressBook/AddressBook.h>
+#import "wxtClass.h"
 
 
 
@@ -44,6 +45,10 @@
     red.backgroundColor = [UIColor grayColor];
     [self.view addSubview:red];
     [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
+    
+    CGRect rect = red.frame;
+    
+    rect = red.bounds;
     
     
     UIButton * yell = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 100)];
@@ -94,15 +99,40 @@
     
     //卖票锁演示
    
-    all = 100;
-    pLock = [[NSLock alloc]init];
-    [self myLock];
+//    all = 100;
+//    pLock = [[NSLock alloc]init];
+//    [self myLock];
 
     
     /*NSThread
     [self performSelectorInBackground:@selector(longTime:) withObject:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
     */
+    
+    //深copy和浅copy
+    [self myCopy];
+    
     NSLog(@"mainend");
+}
+
+-(void)myCopy{
+    testclass * test = [[testclass alloc]init];
+    
+    NSMutableString * p = [[NSMutableString alloc]initWithString: @"wxt"];
+    NSLog(@"%p---%@",p,p);
+    
+    test.TestCopy = p;
+    NSLog(@"%p---%@",test.TestCopy,test.TestCopy);
+    test.TestStrong = p;
+    NSLog(@"%p---%@",test.TestStrong,test.TestStrong);
+    
+
+    
+    [p appendString:@"!!!!!!!!"];
+    //p如果为不可变类型，均为浅拷贝，所以地址和数据都没变。
+    NSLog(@"%p---%@",test.TestCopy,test.TestCopy);
+    NSLog(@"%p---%@",test.TestStrong,test.TestStrong);
+    
+    
 }
 
 

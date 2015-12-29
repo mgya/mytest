@@ -18,6 +18,7 @@
 		C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617521C29A4000070D101 /* DSC01425.JPG */; };
 		C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617541C29A44B0070D101 /* DSC01529.JPG */; };
 		C8A6E23C1C2304F400C77EA7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */; };
+		C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C1995A1C32D28700C2017B /* wxtClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		C8A617521C29A4000070D101 /* DSC01425.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01425.JPG; sourceTree = "<group>"; };
 		C8A617541C29A44B0070D101 /* DSC01529.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01529.JPG; sourceTree = "<group>"; };
 		C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C8C199591C32D28700C2017B /* wxtClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wxtClass.h; sourceTree = "<group>"; };
+		C8C1995A1C32D28700C2017B /* wxtClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wxtClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				C82B9C221C1DB27800FBBDEB /* Supporting Files */,
 				C814F8761C2AE73F00274CAF /* testclass.h */,
 				C814F8771C2AE73F00274CAF /* testclass.m */,
+				C8C199591C32D28700C2017B /* wxtClass.h */,
+				C8C1995A1C32D28700C2017B /* wxtClass.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C814F8781C2AE73F00274CAF /* testclass.m in Sources */,
+				C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,
 				C82B9C241C1DB27800FBBDEB /* main.m in Sources */,

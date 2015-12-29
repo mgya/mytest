@@ -25,6 +25,12 @@
 
 @property(nonatomic,assign)id<testdelegate>delegate;
 
+
+@property(nonatomic,strong)NSString * TestStrong;
+@property(nonatomic,copy)NSString * TestCopy;
+
+
+
 -(void)runTest;
 
 @end

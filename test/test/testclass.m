@@ -11,7 +11,6 @@
 @implementation testclass
 
 
-//@dynamic bType;
 
 - (void)setBType:(BOOL)type{
     _bType = type;
@@ -30,6 +29,9 @@
     [self.delegate print:@"23435"];
 
 }
+
+
+
 
 @end
 
