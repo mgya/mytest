@@ -8,15 +8,47 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
 
+
+
 @implementation AppDelegate
+
+@synthesize rootViewController;
+@synthesize window;
+@synthesize naviMain;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+//    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//
+//    //主界面
+//    rootViewController = [[ViewController alloc]init];
+//    naviMain = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+//    
+//    self.window.rootViewController = naviMain;
+//    
+//    [self.window makeKeyAndVisible];
+    
+    
+    
+    
+    window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    rootViewController = [[ViewController alloc]init];
+    
+    naviMain = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+    
+    [window setRootViewController:naviMain];
+    
+    [window makeKeyAndVisible];
+    
     return YES;
 }
 

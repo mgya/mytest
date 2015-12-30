@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "testclass.h"
+#import "TableViewControllerDemo.h"
 
 @interface ViewController : UIViewController<testdelegate>
 

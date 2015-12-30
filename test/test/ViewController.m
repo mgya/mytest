@@ -109,9 +109,23 @@
     */
     
     //深copy和浅copy
-    [self myCopy];
+   // [self myCopy];
+    
+//    UITableviewDemo
+    [self UITableviewDemo];
+    
     
     NSLog(@"mainend");
+}
+
+
+
+-(void)UITableviewDemo{
+    TableViewControllerDemo * demo = [[TableViewControllerDemo alloc]init];
+    
+    [self.navigationController pushViewController:demo animated:YES];
+    
+    
 }
 
 -(void)myCopy{
