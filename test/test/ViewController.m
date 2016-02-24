@@ -112,7 +112,11 @@
    // [self myCopy];
     
 //    UITableviewDemo
-    [self UITableviewDemo];
+//    [self UITableviewDemo];
+    
+    
+    [self writefile:@"这里写了字符串的log"];
+    
     
     
     NSLog(@"mainend");
@@ -448,6 +452,60 @@
 
 -(void)print:(NSString *)input{
     NSLog(@"====%@====",input);
+}
+
+
+//字典转换成字符串
+-(NSString*)DataTOjsonString:(id)object
+{
+    if (object == nil) {
+        return nil;
+    }
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
+}
+
+//写文件
+- (void)writefile:(NSString *)string
+{
+    NSArray *paths  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *homePath = [paths objectAtIndex:0];
+    
+    NSString *filePath = [homePath stringByAppendingPathComponent:@"testfile.text"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if(![fileManager fileExistsAtPath:filePath]) //如果不存在
+    {
+        NSString *str = @"记录文件";
+        [str writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        
+    }
+    
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+    
+    [fileHandle seekToEndOfFile];  //将节点跳到文件的末尾
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    NSString *datestr = [dateFormatter stringFromDate:[NSDate date]];
+    
+    NSString *str = [NSString stringWithFormat:@"\n%@\n%@",datestr,string];
+    
+    NSData* stringData  = [str dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [fileHandle writeData:stringData]; //追加写入数据
+    
+    [fileHandle closeFile];
 }
 
 @end
