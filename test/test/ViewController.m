@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <AddressBook/AddressBook.h>
 #import "wxtClass.h"
+#import "KeychainItemWrapper.h"
 
 
 
@@ -115,11 +116,11 @@
 //    [self UITableviewDemo];
     
     
-    [self writefile:@"这里写了字符串的log"];
+ //   [self writefile:@"这里写了字符串的log"];
     
     
-    
-    NSLog(@"mainend");
+    [self myKeychain];
+
 }
 
 
@@ -506,6 +507,51 @@
     [fileHandle writeData:stringData]; //追加写入数据
     
     [fileHandle closeFile];
+}
+
+-(void)myKeychain{
+    
+    KeychainItemWrapper *wrapper = [[KeychainItemWrapper alloc] initWithIdentifier:@"Account Number" accessGroup:nil];
+    
+    NSString *myValues =  [wrapper  objectForKey:(id)kSecAttrService];
+    NSString *name =  [wrapper  objectForKey:(id)kSecAttrAccount];
+    NSString * uuid =  [wrapper objectForKey:(id)kSecValueData];
+    NSLog(@"读取到了如下数据：%@==%@===%@",myValues,name,uuid);
+    
+    
+    
+    
+    //首次执行该方法时，uuid为空
+        if ([uuid isEqualToString:@""])
+    
+        {
+            NSLog(@"这是这个设备第一次安装");
+        
+   
+            [wrapper setObject:@"myappkey" forKey:(id)kSecAttrService];
+            [wrapper setObject:@"wangxiongtao" forKey:(id)kSecAttrAccount];
+            [wrapper setObject:@"安装标记" forKey:(id)kSecValueData];
+            
+            myValues =  [wrapper  objectForKey:(id)kSecAttrService];
+            name =  [wrapper  objectForKey:(id)kSecAttrAccount];
+            uuid =  [wrapper objectForKey:(id)kSecValueData];
+            NSLog(@"存储了如下数据：%@==%@===%@",myValues,name,uuid);
+
+        }else{
+            myValues =  [wrapper  objectForKey:(id)kSecAttrService];
+            name =  [wrapper  objectForKey:(id)kSecAttrAccount];
+            uuid =  [wrapper objectForKey:(id)kSecValueData];
+
+            
+            NSLog(@"之前装过此设备，获得如下数据：%@==%@===%@",myValues,name,uuid);
+
+        }
+    
+    //清空设置
+   // [wrapper resetKeychainItem];
+
+    
+
 }
 
 @end

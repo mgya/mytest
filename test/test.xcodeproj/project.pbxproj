@@ -13,6 +13,9 @@
 		C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C291C1DB27800FBBDEB /* ViewController.m */; };
 		C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */; };
 		C82B9C321C1DB27800FBBDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82B9C301C1DB27800FBBDEB /* LaunchScreen.storyboard */; };
+		C85D302F1C7DA28800921539 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C85D302E1C7DA28800921539 /* Default-568h@2x.png */; };
+		C85D30351C7DB1DB00921539 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85D30341C7DB1DA00921539 /* Security.framework */; };
+		C85D303B1C7DB57400921539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */; };
 		C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */; };
 		C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617521C29A4000070D101 /* DSC01425.JPG */; };
 		C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617541C29A44B0070D101 /* DSC01529.JPG */; };
@@ -33,6 +36,10 @@
 		C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C82B9C311C1DB27800FBBDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C82B9C331C1DB27800FBBDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C85D302E1C7DA28800921539 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C85D30341C7DB1DA00921539 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C85D30391C7DB57400921539 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pere_david_s_deer-002.jpg"; sourceTree = "<group>"; };
 		C8A617521C29A4000070D101 /* DSC01425.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01425.JPG; sourceTree = "<group>"; };
 		C8A617541C29A44B0070D101 /* DSC01529.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01529.JPG; sourceTree = "<group>"; };
@@ -48,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85D30351C7DB1DB00921539 /* Security.framework in Frameworks */,
 				C8A6E23C1C2304F400C77EA7 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +66,8 @@
 		C82B9C161C1DB27800FBBDEB = {
 			isa = PBXGroup;
 			children = (
+				C85D30341C7DB1DA00921539 /* Security.framework */,
+				C85D302E1C7DA28800921539 /* Default-568h@2x.png */,
 				C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */,
 				C82B9C211C1DB27800FBBDEB /* test */,
 				C82B9C201C1DB27800FBBDEB /* Products */,
@@ -75,6 +85,7 @@
 		C82B9C211C1DB27800FBBDEB /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C85D30381C7DB57400921539 /* Keychain */,
 				C82B9C251C1DB27800FBBDEB /* AppDelegate.h */,
 				C82B9C261C1DB27800FBBDEB /* AppDelegate.m */,
 				C82B9C281C1DB27800FBBDEB /* ViewController.h */,
@@ -102,6 +113,15 @@
 				C82B9C231C1DB27800FBBDEB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C85D30381C7DB57400921539 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				C85D30391C7DB57400921539 /* KeychainItemWrapper.h */,
+				C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +187,7 @@
 				C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */,
 				C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */,
 				C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */,
+				C85D302F1C7DA28800921539 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +204,7 @@
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,
 				C82B9C241C1DB27800FBBDEB /* main.m in Sources */,
+				C85D303B1C7DB57400921539 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,14 +306,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7b889ade-8327-4c25-a105-ff41a68dd560";
 			};
 			name = Debug;
 		};
@@ -299,14 +321,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				INFOPLIST_FILE = test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "7b889ade-8327-4c25-a105-ff41a68dd560";
 			};
 			name = Release;
 		};
