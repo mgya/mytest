@@ -118,12 +118,42 @@
     
  //   [self writefile:@"这里写了字符串的log"];
     
+//钥匙串里存储
+  //  [self myKeychain];
     
-    [self myKeychain];
+//最简单的加密解密
+//    [self jiamijiemi];
 
+    
 }
 
 
+
+-(void)jiamijiemi{
+    char *p = "abcd1234";
+    
+    int len = strlen(p);
+    
+    char *new = malloc(len);
+    
+    
+    for (int i = 0; i<len; i++) {
+        char a = p[i]^0x34a3d4c5;
+        new[i] = a;
+    }
+    NSLog(@"加密后＝＝＝%s",new);
+    
+    
+    len = strlen(new);
+    
+    char *old = malloc(len);
+    
+    for (int i = 0; i<len; i++) {
+        char a = new[i]^0x34a3d4c5;
+        old[i] = a;
+    }
+    NSLog(@"解密后＝＝＝%s",old);
+}
 
 -(void)UITableviewDemo{
     TableViewControllerDemo * demo = [[TableViewControllerDemo alloc]init];
@@ -518,8 +548,7 @@
     NSString * uuid =  [wrapper objectForKey:(id)kSecValueData];
     NSLog(@"读取到了如下数据：%@==%@===%@",myValues,name,uuid);
     
-    
-    
+
     
     //首次执行该方法时，uuid为空
         if ([uuid isEqualToString:@""])
