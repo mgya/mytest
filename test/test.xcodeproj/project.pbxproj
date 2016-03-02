@@ -13,6 +13,7 @@
 		C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C291C1DB27800FBBDEB /* ViewController.m */; };
 		C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */; };
 		C82B9C321C1DB27800FBBDEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82B9C301C1DB27800FBBDEB /* LaunchScreen.storyboard */; };
+		C8314AE81C86C05C00BA8E46 /* KvcClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8314AE71C86C05C00BA8E46 /* KvcClass.m */; };
 		C85D302F1C7DA28800921539 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C85D302E1C7DA28800921539 /* Default-568h@2x.png */; };
 		C85D30351C7DB1DB00921539 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85D30341C7DB1DA00921539 /* Security.framework */; };
 		C85D303B1C7DB57400921539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */; };
@@ -36,6 +37,8 @@
 		C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C82B9C311C1DB27800FBBDEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C82B9C331C1DB27800FBBDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8314AE61C86C05C00BA8E46 /* KvcClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvcClass.h; sourceTree = "<group>"; };
+		C8314AE71C86C05C00BA8E46 /* KvcClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KvcClass.m; sourceTree = "<group>"; };
 		C85D302E1C7DA28800921539 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C85D30341C7DB1DA00921539 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C85D30391C7DB57400921539 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				C82B9C231C1DB27800FBBDEB /* main.m */,
+				C8314AE61C86C05C00BA8E46 /* KvcClass.h */,
+				C8314AE71C86C05C00BA8E46 /* KvcClass.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,
 				C82B9C241C1DB27800FBBDEB /* main.m in Sources */,
 				C85D303B1C7DB57400921539 /* KeychainItemWrapper.m in Sources */,
+				C8314AE81C86C05C00BA8E46 /* KvcClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

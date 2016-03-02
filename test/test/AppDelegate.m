@@ -23,20 +23,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
     
-    
-//    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//
-//    //主界面
-//    rootViewController = [[ViewController alloc]init];
-//    naviMain = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-//    
-//    self.window.rootViewController = naviMain;
-//    
-//    [self.window makeKeyAndVisible];
-    
-    
+    // 处理iOS8本地推送不能收到的问题
+    float sysVersion=[[UIDevice currentDevice]systemVersion].floatValue;
+    if (sysVersion>=8.0) {
+        UIUserNotificationType type=UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *setting=[UIUserNotificationSettings settingsForTypes:type categories:nil];
+        [[UIApplication sharedApplication]registerUserNotificationSettings:setting];
+    }
+
+
+
     
     
     window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -80,5 +78,7 @@
     // 图标上的数字减1
     application.applicationIconBadgeNumber -= 1;
 }
+
+
 
 @end

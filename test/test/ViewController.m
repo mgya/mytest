@@ -10,6 +10,7 @@
 #import <AddressBook/AddressBook.h>
 #import "wxtClass.h"
 #import "KeychainItemWrapper.h"
+#import "KvcClass.h"
 
 
 
@@ -35,6 +36,8 @@
     
     NSLog(@"%@",[self class]);
     NSLog(@"%@",[super class]);
+    
+
     
     
     
@@ -63,6 +66,26 @@
     [myImageView setFrame:CGRectMake(100, 400, 320, 300)];
     
     [self.view addSubview:myImageView];
+    
+    
+    UIButton * pushOpen = [[UIButton alloc]initWithFrame:CGRectMake(50, 200, 100, 100)];
+    pushOpen.backgroundColor = [UIColor redColor];
+    [pushOpen setTitle:@"10秒后推送消息" forState:UIControlStateNormal];
+    pushOpen.titleLabel.font = [UIFont systemFontOfSize:12];
+    [pushOpen addTarget:self action:@selector(open) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    
+    
+    UIButton * pushClose = [[UIButton alloc]initWithFrame:CGRectMake(200, 200, 100, 100)];
+    pushClose.backgroundColor = [UIColor redColor];
+    [pushClose setTitle:@"停止推送消息"forState:UIControlStateNormal];
+    pushClose.titleLabel.font = [UIFont systemFontOfSize:12];
+    [pushClose addTarget:self action:@selector(close) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:pushOpen];
+    [self.view addSubview:pushClose];
     
 
     
@@ -123,7 +146,42 @@
     
 //最简单的加密解密
 //    [self jiamijiemi];
+    
+    
+    [self KVC];
 
+    
+    
+}
+
+
+-(void)KVC{
+    
+    
+    KvcClass * myKVC = [[KvcClass alloc]init];
+    NSLog(@"%@",[myKVC valueForKey:@"name" ]);
+    [myKVC setValue:@"王😄" forKey:@"name"];
+    NSLog(@"%@",[myKVC valueForKey:@"name"]);
+    
+    NSLog(@"%@",[myKVC valueForKey:@"age" ]);
+    [myKVC setValue:[NSNumber numberWithInt:33] forKey:@"age"];
+    NSLog(@"%@",[myKVC valueForKey:@"age"]);
+    
+    
+    
+    NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"wang",@"name", [NSNumber numberWithInt:34],@"age", nil];
+    
+    [myKVC setValuesForKeysWithDictionary:dic];
+    
+    NSLog(@"%@",[myKVC valueForKey:@"name"]);
+    NSLog(@"%@",[myKVC valueForKey:@"age"]);
+
+    
+}
+
+-(void)open{
+    //取消掉之前的所有通知
+  //  [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
     // 创建一个本地推送
     UILocalNotification *notification = [[UILocalNotification alloc] init];
@@ -135,25 +193,34 @@
         // 设置时区
         notification.timeZone = [NSTimeZone defaultTimeZone];
         // 设置重复间隔
-        notification.repeatInterval = kCFCalendarUnitDay;
+        notification.repeatInterval = kCFCalendarUnitMinute;
         // 推送声音
         notification.soundName = UILocalNotificationDefaultSoundName;
         // 推送内容
         notification.alertBody = @"推送内容";
+        notification.alertAction = NSLocalizedString(@"起床了", nil);
+        
+        
+        
         //显示在icon上的红色圈中的数子
-        notification.applicationIconBadgeNumber = 1;
+        notification.applicationIconBadgeNumber += 1;
         //设置userinfo 方便在之后需要撤销的时候使用
         NSDictionary *info = [NSDictionary dictionaryWithObject:@"name"forKey:@"key"];
         notification.userInfo = info;
         //添加推送到UIApplication
         UIApplication *app = [UIApplication sharedApplication];
-        [app scheduleLocalNotification:notification];   
+        [app scheduleLocalNotification:notification];
     }
     
+
+}
+
+-(void)close{
     
+    //取消掉之前的所有通知
+    //  [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
-    
-    
+    //取消掉通知
     UIApplication *app = [UIApplication sharedApplication];
     //获取本地推送数组
     NSArray *localArray = [app scheduledLocalNotifications];
@@ -169,7 +236,7 @@
                         localNotification = nil;
                     }
                     localNotification = noti;
-                  //  break;
+                    break;
                 }
             }
         }
@@ -185,17 +252,15 @@
             [app cancelLocalNotification:localNotification];
             return;
         }
-    
+        
     }
-    
+
 }
-
-
 
 -(void)jiamijiemi{
     char *p = "abcd1234";
     
-    int len = strlen(p);
+    size_t len = strlen(p);
     
     char *new = malloc(len);
     
