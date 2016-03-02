@@ -1,5 +1,5 @@
 //
-//  KvcClass.h
+//  KvoClass.h
 //  test
 //
 //  Created by wangxiongtao on 16/3/2.
@@ -7,11 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface KvcClass : NSObject
-
-@end
-
-@interface FullName : NSString
-
+#import "KvcClass.h"
+@interface KvoClass : NSObject
+-(void) watchPersonForChangeOfAddress:(KvcClass *)p;
 @end

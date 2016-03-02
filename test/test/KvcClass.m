@@ -8,10 +8,19 @@
 
 #import "KvcClass.h"
 
+@implementation FullName{
+    
+    NSString *first;
+    NSString *Second;
+}
+
+@end
+
 @implementation KvcClass{
 
     NSString *_name;
     NSInteger _age;
+    FullName * full;
 
 }
 

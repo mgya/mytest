@@ -11,6 +11,7 @@
 #import "wxtClass.h"
 #import "KeychainItemWrapper.h"
 #import "KvcClass.h"
+#import "KvoClass.h"
 
 
 
@@ -163,9 +164,15 @@
     [myKVC setValue:@"王😄" forKey:@"name"];
     NSLog(@"%@",[myKVC valueForKey:@"name"]);
     
+    
     NSLog(@"%@",[myKVC valueForKey:@"age" ]);
     [myKVC setValue:[NSNumber numberWithInt:33] forKey:@"age"];
     NSLog(@"%@",[myKVC valueForKey:@"age"]);
+    
+    KvoClass *myKVO = [[KvoClass alloc]init];
+    [myKVO watchPersonForChangeOfAddress:myKVC];
+    
+    [myKVC setValue:@"王😄" forKey:@"name"];
     
     
     
@@ -175,7 +182,16 @@
     
     NSLog(@"%@",[myKVC valueForKey:@"name"]);
     NSLog(@"%@",[myKVC valueForKey:@"age"]);
-
+    
+    
+    FullName* full = [[FullName alloc]init];
+    [full setValue:@"王" forKey:@"first"];
+    
+    [myKVC setValue:full forKeyPath:@"full"];
+    NSString *firstname = [myKVC valueForKeyPath:@"full.first"];
+    
+    NSLog(@"%@",firstname);
+   
     
 }
 
