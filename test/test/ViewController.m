@@ -12,6 +12,8 @@
 #import "KeychainItemWrapper.h"
 #import "KvcClass.h"
 #import "KvoClass.h"
+#import "codingData.h"
+#import "codingDataTest.h"
 
 
 
@@ -149,10 +151,34 @@
 //    [self jiamijiemi];
     
     
-    [self KVC];
+ //   [self KVC];
+    
+    
+//    [self myCoding];
+    //NSData的转换
+    
+    
+    
+    
 
+}
+
+
+-(void)myCoding{
+    codingData * logData = [[codingData alloc]init];
+    logData.name = @"wxt";
+    logData.age = 33;
+    logData.soon = [[NSArray alloc]initWithObjects:@"wang",@"yu",@"qi", nil];
+    logData.test = [[codingDataTest alloc]init];
+    logData.test.p = @"hahaha";
+    logData.money = 1.57;
     
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:logData];
+    codingData *newdata = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    
+    NSLog(@"%@,%zd",newdata.name,newdata.age);
 }
 
 
@@ -172,11 +198,13 @@
     KvoClass *myKVO = [[KvoClass alloc]init];
     [myKVO watchPersonForChangeOfAddress:myKVC];
     
-    [myKVC setValue:@"王😄" forKey:@"name"];
+    [myKVC setValue:@"王哈哈" forKey:@"name"];
     
     
     
     NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"wang",@"name", [NSNumber numberWithInt:34],@"age", nil];
+    
+
     
     [myKVC setValuesForKeysWithDictionary:dic];
     

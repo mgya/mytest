@@ -24,6 +24,8 @@
 		C8A6E23C1C2304F400C77EA7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */; };
 		C8BBE4B81C34189200BE3E63 /* TableViewControllerDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */; };
 		C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C1995A1C32D28700C2017B /* wxtClass.m */; };
+		C8DCCA6E1C902B4D00D789AC /* codingData.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCCA6D1C902B4D00D789AC /* codingData.m */; };
+		C8DCCA711C9114EA00D789AC /* codingDataTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCCA701C9114EA00D789AC /* codingDataTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,10 @@
 		C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerDemo.m; sourceTree = "<group>"; };
 		C8C199591C32D28700C2017B /* wxtClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wxtClass.h; sourceTree = "<group>"; };
 		C8C1995A1C32D28700C2017B /* wxtClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wxtClass.m; sourceTree = "<group>"; };
+		C8DCCA6C1C902B4D00D789AC /* codingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codingData.h; sourceTree = "<group>"; };
+		C8DCCA6D1C902B4D00D789AC /* codingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = codingData.m; sourceTree = "<group>"; };
+		C8DCCA6F1C9114EA00D789AC /* codingDataTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codingDataTest.h; sourceTree = "<group>"; };
+		C8DCCA701C9114EA00D789AC /* codingDataTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = codingDataTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		C82B9C211C1DB27800FBBDEB /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C8DCCA6B1C902B1300D789AC /* coodingData */,
 				C85D30381C7DB57400921539 /* Keychain */,
 				C82B9C251C1DB27800FBBDEB /* AppDelegate.h */,
 				C82B9C261C1DB27800FBBDEB /* AppDelegate.m */,
@@ -132,6 +139,17 @@
 				C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */,
 			);
 			path = Keychain;
+			sourceTree = "<group>";
+		};
+		C8DCCA6B1C902B1300D789AC /* coodingData */ = {
+			isa = PBXGroup;
+			children = (
+				C8DCCA6C1C902B4D00D789AC /* codingData.h */,
+				C8DCCA6D1C902B4D00D789AC /* codingData.m */,
+				C8DCCA6F1C9114EA00D789AC /* codingDataTest.h */,
+				C8DCCA701C9114EA00D789AC /* codingDataTest.m */,
+			);
+			name = coodingData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8DCCA711C9114EA00D789AC /* codingDataTest.m in Sources */,
 				C8BBE4B81C34189200BE3E63 /* TableViewControllerDemo.m in Sources */,
 				C814F8781C2AE73F00274CAF /* testclass.m in Sources */,
 				C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */,
+				C8DCCA6E1C902B4D00D789AC /* codingData.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */,
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,

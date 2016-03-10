@@ -12,6 +12,6 @@
 
 @end
 
-@interface FullName : NSString
+@interface FullName : NSObject
 
 @end
