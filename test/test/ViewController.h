@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "testclass.h"
 #import "TableViewControllerDemo.h"
+#import "ASIHTTPRequest.h"
 
-@interface ViewController : UIViewController<testdelegate>
+
+
+@interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate>
 
 
 @property(nonatomic,strong)NSString * test ;

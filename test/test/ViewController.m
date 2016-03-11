@@ -29,6 +29,11 @@
     NSInteger all;
     NSInteger alled;
     NSLock * pLock;
+    
+    NSMutableDictionary *dataDict;
+    NSMutableArray *parserObjects;
+    NSString *parserString;
+
 }
 
 @synthesize test = _test;
@@ -145,7 +150,7 @@
  //   [self writefile:@"这里写了字符串的log"];
     
 //钥匙串里存储
-  //  [self myKeychain];
+ //   [self myKeychain];
     
 //最简单的加密解密
 //    [self jiamijiemi];
@@ -159,8 +164,145 @@
     
     
     
+    [self myASIHttp];
     
 
+    
+    
+
+}
+
+-(void)myASIHttp{
+    
+    NSString * str =@"天津";
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding (kCFStringEncodingGB_18030_2000);
+    
+    NSLog(@"%@",[str stringByAddingPercentEscapesUsingEncoding:enc]);
+    
+    
+    //天气数据
+//    NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%CC%EC%BD%F2&password=DJOYnieT8234jlsK&day=0"];
+    
+    //图片数据
+    //    NSURL *url = [NSURL URLWithString:@"http://s9.51cto.com/wyfs01/M01/11/5D/wKioJlH1k33TF3WsAAOKT-6NP04749.jpg"];
+    
+    
+    NSURL *url = [NSURL URLWithString:@"http://book.huyingread.com:9999/httpservice?cmd=getusertimer&uid=107355342&at=j4tvVXmsAU2sck9NxBzb2y6N94cEUrIg5xwN1icq1jE%3D&v=2.2.5.800&sign=bb364955bf94dc37c0a0dbc101244570"];
+    
+
+    
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    
+    [request setDelegate:self];
+    
+    [request startAsynchronous];
+
+    
+}
+
+
+//asihttp返回的数据
+- (void)requestFinished:(ASIHTTPRequest *)request
+
+{
+    
+    // 当以文本形式读取返回内容时用这个方法
+    
+  //  NSString *responseString = [request responseString];
+    
+    
+    //有中文的xml格式
+    NSString *responseString = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+    
+    
+    if (responseString != nil && responseString.length > 0) {
+       //一般收到xml，json的数据
+        NSData* xmlData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+        
+        //用nsxml解析数据
+        NSXMLParser * parser = [[NSXMLParser alloc]initWithData:xmlData];
+        [parser setDelegate:self];
+        [parser parse];
+     
+        NSLog(@"%@",xmlData);
+        
+    }else{//一般是收到图片数据等
+        
+        NSData *responseData = [request responseData];
+        
+        
+        UIImage *image = [UIImage imageWithData: responseData];
+        
+        
+        myImageView.image = image;
+        
+    }
+
+    
+    
+}
+
+//开始进行解析
+- (void)parserDidStartDocument:(NSXMLParser *)parser {
+    
+    
+    
+    dataDict = [[NSMutableDictionary alloc] initWithCapacity:0];  //每一条信息都用字典来存储
+    parserObjects = [[NSMutableArray alloc] init];  //每一组信息都用数组来存，最后得到的数据即在此数组中
+}
+
+
+//发现元素开始符的处理函数
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
+    
+//    if (elementName != nil) {
+//        parserString = elementName;
+//    }
+//    NSLog(@"%@",elementName);
+    
+
+}
+
+//处理标签包含内容字符
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    //记录所取得的文字列
+//    NSLog(@"%@",string);
+//    
+//    if ([string isEqualToString:@"\n"] ) {
+//        return;
+//    }
+//    
+//    
+//    if (string != nil && string.length > 0) {
+//        [dataDict setObject:string forKey:parserString];
+//    }
+    
+    parserString = string;
+    
+}
+
+//发现元素结束符的处理函数，保存元素各项目数据（即报告元素的结束标记）
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    
+    [dataDict setObject:parserString forKey:elementName];
+    NSLog(@"%@",dataDict);
+}
+
+
+//报告不可恢复的解析错误
+- (void)requestFailed:(ASIHTTPRequest *)request
+
+{
+    
+    NSError *error = [request error];
+    
+}
+
+//报告解析的结束
+- (void)parserDidEndDocument:(NSXMLParser *)parser{
+    NSLog(@"over");
 }
 
 
