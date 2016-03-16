@@ -16,6 +16,7 @@
 #import "codingDataTest.h"
 
 
+static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
 @interface ViewController ()
 
@@ -163,14 +164,44 @@
     //NSData的转换
     
     
+  //  ASIHttp的使用
+ //   [self myASIHttp];
     
-    [self myASIHttp];
+    // AFHTTP的使用
+  //  [self myAFHttp];
     
 
-    
-    
+
 
 }
+
+-(void)myAFHttp{
+    
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    AFXMLParserResponseSerializer * responseSer = [AFXMLParserResponseSerializer alloc];
+    [manager setResponseSerializer:responseSer];
+    
+    
+    
+    [manager GET:@"http://php.weather.sina.com.cn/xml.php?city=%CC%EC%BD%F2&password=DJOYnieT8234jlsK&day=0" parameters:nil success:^(NSURLSessionDataTask *operation,id responseObject){
+        
+        
+        
+        NSXMLParser * parser = (NSXMLParser *)responseObject;
+        parser.delegate =self;
+        [parser setShouldProcessNamespaces:YES];
+        //此法基本可行，但是处理麻烦
+        [parser parse];
+        
+    } failure:^(NSURLSessionDataTask *operation,NSError *error) {
+        NSLog(@"!!!!");
+    }];
+}
+
+
+
 
 -(void)myASIHttp{
     
@@ -181,21 +212,26 @@
     
     
     //天气数据
-//    NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%CC%EC%BD%F2&password=DJOYnieT8234jlsK&day=0"];
+    NSURL *url = [NSURL URLWithString:@"http://php.weather.sina.com.cn/xml.php?city=%CC%EC%BD%F2&password=DJOYnieT8234jlsK&day=0"];
     
+
+
     //图片数据
     //    NSURL *url = [NSURL URLWithString:@"http://s9.51cto.com/wyfs01/M01/11/5D/wKioJlH1k33TF3WsAAOKT-6NP04749.jpg"];
     
     
-    NSURL *url = [NSURL URLWithString:@"http://book.huyingread.com:9999/httpservice?cmd=getusertimer&uid=107355342&at=j4tvVXmsAU2sck9NxBzb2y6N94cEUrIg5xwN1icq1jE%3D&v=2.2.5.800&sign=bb364955bf94dc37c0a0dbc101244570"];
-    
+//    NSURL *url = [NSURL URLWithString:@"http://book.huyingread.com:9999/httpservice?cmd=getusertimer&uid=107355342&at=j4tvVXmsAU2sck9NxBzb2y6N94cEUrIg5xwN1icq1jE%3D&v=2.2.5.800&sign=bb364955bf94dc37c0a0dbc101244570"];
 
-    
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
     [request setDelegate:self];
     
+    //同步请求
+  //  [request startSynchronous];
+    
+    
+    //异步请求
     [request startAsynchronous];
 
     
@@ -209,7 +245,7 @@
     
     // 当以文本形式读取返回内容时用这个方法
     
-  //  NSString *responseString = [request responseString];
+ //   NSString *responseString = [request responseString];
     
     
     //有中文的xml格式
@@ -259,7 +295,7 @@
 //    if (elementName != nil) {
 //        parserString = elementName;
 //    }
-//    NSLog(@"%@",elementName);
+    NSLog(@"%@",elementName);
     
 
 }

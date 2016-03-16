@@ -11,6 +11,7 @@
 #import "TableViewControllerDemo.h"
 #import "ASIHTTPRequest.h"
 
+#import "AFHTTPSessionManager.h"
 
 
 @interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate>
