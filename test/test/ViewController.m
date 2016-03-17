@@ -85,8 +85,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
     
-    
-    
+
     UIButton * pushClose = [[UIButton alloc]initWithFrame:CGRectMake(200, 200, 100, 100)];
     pushClose.backgroundColor = [UIColor redColor];
     [pushClose setTitle:@"停止推送消息"forState:UIControlStateNormal];
@@ -95,6 +94,17 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     [self.view addSubview:pushOpen];
     [self.view addSubview:pushClose];
+    
+    
+    UIButton * test = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
+    test.backgroundColor = [UIColor redColor];
+    [test setTitle:@"开始测试"forState:UIControlStateNormal];
+    test.titleLabel.font = [UIFont systemFontOfSize:12];
+    [test addTarget:self action:@selector(chick) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:pushOpen];
+    [self.view addSubview:pushClose];
+    [self.view addSubview:test];
     
 
     
@@ -170,10 +180,69 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     // AFHTTP的使用
   //  [self myAFHttp];
     
-
+    
 
 
 }
+
+-(void)chick{
+    
+    [self quchong];
+    
+    
+    
+    
+    
+    NSString *timeStr = @"2015-04-10";
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd";
+    formatter.timeZone = [NSTimeZone defaultTimeZone];
+    NSDate *date = [formatter dateFromString:timeStr];
+    // 2015-04-09 16:00:00 +0000
+    NSLog(@"%@", date);
+    
+}
+
+//去重操作
+-(void)quchong{
+    
+    NSArray *array = @[@"12-11", @"12-11", @"12-11", @"12-12", @"12-13", @"12-14",@"12-10"];
+    
+    
+    //用另外一个数组遍历。
+    //    NSMutableArray *MuArry = [[NSMutableArray alloc]init];
+    //
+    //    for (NSString *item in array){
+    //
+    //        if (![MuArry containsObject:item]) {
+    //            [MuArry addObject:item];
+    //        }
+    //
+    //    }
+    
+    //        NSLog(@"%@",MuArry);
+    
+    
+    //方法二
+    //    array = [array valueForKeyPath:@"@distinctUnionOfObjects.self"];
+    //    NSLog(@"%@", array);
+    
+    
+    
+    //利用字典的特性保存
+        NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] initWithCapacity:array.count];
+        for (NSString *item in array) {
+            [resultDict setObject:item forKey:item];
+        }
+        NSArray *resultArray = resultDict.allValues;
+        NSLog(@"%@", resultArray);
+    
+    
+    //方法三
+    //    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:array];
+    //    NSLog(@"%@", set.array);
+}
+
 
 -(void)myAFHttp{
     
