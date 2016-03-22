@@ -556,7 +556,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -571,7 +571,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
 				PRODUCT_NAME = "$(TARGET_NAME)";

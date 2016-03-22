@@ -34,6 +34,8 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSMutableDictionary *dataDict;
     NSMutableArray *parserObjects;
     NSString *parserString;
+    
+    UIButton * test;
 
 }
 
@@ -96,7 +98,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [self.view addSubview:pushClose];
     
     
-    UIButton * test = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
+    test = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
     test.backgroundColor = [UIColor redColor];
     [test setTitle:@"开始测试"forState:UIControlStateNormal];
     test.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -136,9 +138,8 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
  //   [self myThread];
     
     //子线程下载显示图片
-/*
-     [self myGCD];
- */
+//     [self myGCD];
+ 
     
     //卖票锁演示
    
@@ -187,21 +188,68 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
 -(void)chick{
     
-    [self quchong];
+    //去重操作
+ //   [self quchong];
+    
+    //打印当前时间
+//    [self myTime];
     
     
+ 
+    //子线程
+//    [self performSelectorInBackground:@selector(myLog:) withObject:@"子线程"];
     
+    //主线程
+//    [self performSelectorOnMainThread:@selector(myLog:) withObject:@"主线程" waitUntilDone:YES];
+
     
+
+ 
+}
+
+
+
+-(void)myLog:(NSString*)log{
     
-    NSString *timeStr = @"2015-04-10";
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyy-MM-dd";
-    formatter.timeZone = [NSTimeZone defaultTimeZone];
-    NSDate *date = [formatter dateFromString:timeStr];
-    // 2015-04-09 16:00:00 +0000
-    NSLog(@"%@", date);
+[self performSelectorOnMainThread:@selector(up) withObject:nil waitUntilDone:NO];
+    
     
 }
+
+-(void)up{
+    int i = 0;
+    while (i < 10000) {
+        i++;
+        NSLog(@"!!!%d!!!!!!",i);
+    }
+
+    test.backgroundColor = [UIColor blackColor];
+}
+
+
+
+-(void)myTime{
+   // 转换时间
+    //    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    //    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    //    NSString *currentDateStr = [formatter stringFromDate:[NSDate date]];
+    //    formatter.timeZone = [NSTimeZone defaultTimeZone];
+    //    NSDate *date = [formatter dateFromString:currentDateStr];
+    //    NSLog(@"%@", date);
+    
+    
+    //获取当地的时间
+    //    NSDate *date = [NSDate date];
+    //    NSLog(@"%@", date);
+    //    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    //    NSInteger interval = [zone secondsFromGMTForDate: date];
+    //    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+    //    NSLog(@"enddate=%@",localeDate);
+    
+
+
+}
+
 
 //去重操作
 -(void)quchong{
@@ -241,6 +289,10 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     //方法三
     //    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:array];
     //    NSLog(@"%@", set.array);
+    
+    while (1) {
+        NSLog(@"!!!!!%@!!!!!!",[NSThread currentThread]);
+    }
 }
 
 
@@ -724,8 +776,20 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
 
 -(void)myGCD{
-    UIImageView * test = [[UIImageView alloc]initWithFrame:CGRectMake(0, 300, 300, 500)];
+    UIImageView * testImagVIew = [[UIImageView alloc]initWithFrame:CGRectMake(0, 300, 300, 500)];
     NSURL * url = [NSURL URLWithString:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
+    
+    
+    
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0/*延迟执行时间*/ * NSEC_PER_SEC));
+    
+        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+            NSLog(@"延迟2秒");
+        });
+    
+    
+    
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // 耗时的操作
@@ -734,12 +798,12 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
         UIImage *image = [[UIImage alloc]initWithData:data];
         dispatch_async(dispatch_get_main_queue(), ^{
             // 更新界面
-            test.image = image;
+            testImagVIew.image = image;
         });
     });
 
     
-    [self.view addSubview:test];
+    [self.view addSubview:testImagVIew];
 }
 
 -(void)groupImage{
