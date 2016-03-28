@@ -20,6 +20,7 @@
 @synthesize rootViewController;
 @synthesize window;
 @synthesize naviMain;
+@synthesize myTimer;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -56,11 +57,49 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
+    
+    
+    
+    [self beingBackgroundUpdateTask];
+    // 在这里加上你需要长久运行的代码
+    
+
+    myTimer =
+    [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                     target:self
+                                   selector:@selector(timerMethod) userInfo:nil
+                                    repeats:YES];
+    
+  //  [self endBackgroundUpdateTask];
+
+    
+    
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
+
+-(void)timerMethod{
+    
+
+    
+    NSTimeInterval backgroundTimeRemaining =[[UIApplication sharedApplication] backgroundTimeRemaining];
+    if (backgroundTimeRemaining == DBL_MAX){
+        NSLog(@"Background Time Remaining = Undetermined");
+    } else {
+        NSLog(@"Background Time Remaining = %.02f Seconds", backgroundTimeRemaining);
+    }
+}
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    
+    if (self.backgroundUpdateTask != UIBackgroundTaskInvalid) {
+        [self endBackgroundUpdateTask];
+    }
+    
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
@@ -77,6 +116,21 @@
     [alert show];
     // 图标上的数字减1
     application.applicationIconBadgeNumber -= 1;
+}
+
+
+- (void)beingBackgroundUpdateTask
+{
+    self.backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+- (void)endBackgroundUpdateTask
+{
+    [self.myTimer invalidate];
+    [[UIApplication sharedApplication] endBackgroundTask: self.backgroundUpdateTask];
+    self.backgroundUpdateTask = UIBackgroundTaskInvalid;
 }
 
 

@@ -16,5 +16,10 @@
 @property(nonatomic,strong)ViewController *rootViewController;
 
 @property(nonatomic,strong)UINavigationController *naviMain;
+
+
+@property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
+
+@property(nonatomic,strong)  NSTimer *myTimer;
 @end
 

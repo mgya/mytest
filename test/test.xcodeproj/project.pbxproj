@@ -33,6 +33,7 @@
 		C87884F21C966A3500F51782 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884E71C966A3500F51782 /* UIProgressView+AFNetworking.m */; };
 		C87884F31C966A3500F51782 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884E91C966A3500F51782 /* UIRefreshControl+AFNetworking.m */; };
 		C87884F41C966A3500F51782 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884EB1C966A3500F51782 /* UIWebView+AFNetworking.m */; };
+		C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */; };
 		C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */; };
 		C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617521C29A4000070D101 /* DSC01425.JPG */; };
 		C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617541C29A44B0070D101 /* DSC01529.JPG */; };
@@ -110,6 +111,8 @@
 		C87884E91C966A3500F51782 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		C87884EA1C966A3500F51782 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		C87884EB1C966A3500F51782 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		C88D65901CA4EAB7004E1D50 /* blockViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blockViewViewController.h; sourceTree = "<group>"; };
+		C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blockViewViewController.m; sourceTree = "<group>"; };
 		C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pere_david_s_deer-002.jpg"; sourceTree = "<group>"; };
 		C8A617521C29A4000070D101 /* DSC01425.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01425.JPG; sourceTree = "<group>"; };
 		C8A617541C29A44B0070D101 /* DSC01529.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01529.JPG; sourceTree = "<group>"; };
@@ -191,6 +194,7 @@
 		C82B9C211C1DB27800FBBDEB /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C88D658F1CA4EA6A004E1D50 /* blockview */,
 				C87884D71C966A3500F51782 /* UIKit+AFNetworking */,
 				C87884C31C96605700F51782 /* AFNetworking */,
 				C8DCCAA21C916FC900D789AC /* framework */,
@@ -286,6 +290,15 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		C88D658F1CA4EA6A004E1D50 /* blockview */ = {
+			isa = PBXGroup;
+			children = (
+				C88D65901CA4EAB7004E1D50 /* blockViewViewController.h */,
+				C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */,
+			);
+			name = blockview;
+			sourceTree = "<group>";
+		};
 		C8DCCA6B1C902B1300D789AC /* coodingData */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +388,11 @@
 					C82B9C1E1C1DB27800FBBDEB = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 475AFHP8AL;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -438,6 +456,7 @@
 				C87884D61C96605700F51782 /* AFURLSessionManager.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */,
+				C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */,
 				C87884D11C96605700F51782 /* AFHTTPSessionManager.m in Sources */,
 				C87884D51C96605700F51782 /* AFURLResponseSerialization.m in Sources */,
 				C8DCCA8A1C916CF600D789AC /* ASIDataCompressor.m in Sources */,

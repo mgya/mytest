@@ -14,6 +14,7 @@
 #import "KvoClass.h"
 #import "codingData.h"
 #import "codingDataTest.h"
+#import "blockViewViewController.h"
 
 
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
@@ -35,14 +36,15 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSMutableArray *parserObjects;
     NSString *parserString;
     
-    UIButton * test;
+    UIButton * start;
+    
+    int a ;
 
 }
 
 @synthesize test = _test;
 
 - (void)viewDidLoad {
-    
     
     
     NSLog(@"%@",[self class]);
@@ -98,15 +100,15 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [self.view addSubview:pushClose];
     
     
-    test = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
-    test.backgroundColor = [UIColor redColor];
-    [test setTitle:@"开始测试"forState:UIControlStateNormal];
-    test.titleLabel.font = [UIFont systemFontOfSize:12];
-    [test addTarget:self action:@selector(chick) forControlEvents:UIControlEventTouchUpInside];
+    start = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
+    start.backgroundColor = [UIColor redColor];
+    [start setTitle:@"开始测试"forState:UIControlStateNormal];
+    start.titleLabel.font = [UIFont systemFontOfSize:12];
+    [start addTarget:self action:@selector(chick) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:pushOpen];
     [self.view addSubview:pushClose];
-    [self.view addSubview:test];
+    [self.view addSubview:start];
     
 
     
@@ -203,8 +205,35 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 //    [self performSelectorOnMainThread:@selector(myLog:) withObject:@"主线程" waitUntilDone:YES];
 
     
+ //通过block从页面反传值
+//    [self pushblock];
+    
 
  
+}
+
+
+
+
+-(void)pushblock{
+    
+    blockViewViewController* vc = [[blockViewViewController alloc]init];
+    
+
+    
+    [vc input:^(NSString* block){
+        NSLog(@"===%@====",block);
+        start.backgroundColor = [UIColor blackColor];
+        a = 10;
+
+    }];
+    
+    
+    [self.navigationController pushViewController:vc animated:NO];
+    
+    
+    
+    
 }
 
 
@@ -223,7 +252,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
         NSLog(@"!!!%d!!!!!!",i);
     }
 
-    test.backgroundColor = [UIColor blackColor];
+    start.backgroundColor = [UIColor blackColor];
 }
 
 
@@ -787,7 +816,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
             NSLog(@"延迟2秒");
         });
     
-    
+
     
     
     
@@ -1065,5 +1094,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
 
 }
+
+
 
 @end

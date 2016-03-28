@@ -19,5 +19,10 @@
 
 @property(nonatomic,strong)NSString * test ;
 
+
+
+
+
+
 @end
 
