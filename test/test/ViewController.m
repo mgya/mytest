@@ -38,7 +38,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     UIButton * start;
     
-    int a ;
+    AVAudioPlayer *audioPlayer;
 
 }
 
@@ -209,9 +209,47 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 //    [self pushblock];
     
 
+    [self play];
  
 }
 
+
+
+
+
+-(void)play{
+    dispatch_queue_t dispatchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(dispatchQueue, ^(void) {
+        NSError *audioSessionError = nil;
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        if ([audioSession setCategory:AVAudioSessionCategoryPlayback error:&audioSessionError]){
+            NSLog(@"Successfully set the audio session.");
+        } else {
+            NSLog(@"Could not set the audio session");
+        }
+        
+        
+        NSBundle *mainBundle = [NSBundle mainBundle];
+        NSString *filePath = [mainBundle pathForResource:@"yycs" ofType:@"mp3"];
+        NSData *fileData = [NSData dataWithContentsOfFile:filePath];
+        NSError *error = nil;
+        
+        audioPlayer = [[AVAudioPlayer alloc] initWithData:fileData error:&error];
+        
+        if (audioPlayer != nil){
+            audioPlayer.delegate = self;
+            
+            [audioPlayer setNumberOfLoops:-1];
+            if ([audioPlayer prepareToPlay] && [audioPlayer play]){
+                NSLog(@"Successfully started playing...");
+            } else {
+                NSLog(@"Failed to play.");
+            }
+        } else {
+            
+        }
+    });
+}
 
 
 
@@ -224,14 +262,11 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [vc input:^(NSString* block){
         NSLog(@"===%@====",block);
         start.backgroundColor = [UIColor blackColor];
-        a = 10;
 
     }];
     
     
     [self.navigationController pushViewController:vc animated:NO];
-    
-    
     
     
 }

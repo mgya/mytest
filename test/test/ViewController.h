@@ -13,8 +13,11 @@
 
 #import "AFHTTPSessionManager.h"
 
+#import "avfoundation/AVAudioPlayer.h"
+#import "avfoundation/AVAudioSession.h"
 
-@interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate>
+
+@interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate,AVAudioPlayerDelegate>
 
 
 @property(nonatomic,strong)NSString * test ;
