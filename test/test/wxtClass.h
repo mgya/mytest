@@ -13,4 +13,7 @@
 @property(assign,nonatomic)NSInteger age;
 @property(retain,nonatomic)NSString * name;
 
+@property(readonly)int a;
+
 @end
+

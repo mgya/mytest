@@ -8,6 +8,28 @@
 
 #import "wxtClass.h"
 
+
+@interface wxtClass()
+
+-(void)end;
+
+@end
+
+
+
 @implementation wxtClass
+
+
+
+@synthesize a;
+
+-(void)end{
+    NSLog(@"end");
+    a = 10;
+}
+
+
+
+
 
 @end

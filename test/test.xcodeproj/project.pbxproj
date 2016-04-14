@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C814F8781C2AE73F00274CAF /* testclass.m in Sources */ = {isa = PBXBuildFile; fileRef = C814F8771C2AE73F00274CAF /* testclass.m */; };
+		C825506D1CAA699D00CA6D3D /* NSString+PrintLog.m in Sources */ = {isa = PBXBuildFile; fileRef = C825506C1CAA699D00CA6D3D /* NSString+PrintLog.m */; };
+		C82550721CAA7F2000CA6D3D /* wxtSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C82550711CAA7F2000CA6D3D /* wxtSubClass.m */; };
 		C82B9C241C1DB27800FBBDEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C231C1DB27800FBBDEB /* main.m */; };
 		C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C261C1DB27800FBBDEB /* AppDelegate.m */; };
 		C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C291C1DB27800FBBDEB /* ViewController.m */; };
@@ -35,7 +37,6 @@
 		C87884F41C966A3500F51782 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884EB1C966A3500F51782 /* UIWebView+AFNetworking.m */; };
 		C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */; };
 		C88D65971CA90A8F004E1D50 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88D65951CA90A8F004E1D50 /* AVFoundation.framework */; };
-		C88D65981CA90A8F004E1D50 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88D65961CA90A8F004E1D50 /* AVKit.framework */; };
 		C88D659A1CA90C0D004E1D50 /* yycs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C88D65991CA90C0D004E1D50 /* yycs.mp3 */; };
 		C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */; };
 		C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617521C29A4000070D101 /* DSC01425.JPG */; };
@@ -64,6 +65,10 @@
 /* Begin PBXFileReference section */
 		C814F8761C2AE73F00274CAF /* testclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testclass.h; sourceTree = "<group>"; };
 		C814F8771C2AE73F00274CAF /* testclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testclass.m; sourceTree = "<group>"; };
+		C825506B1CAA699D00CA6D3D /* NSString+PrintLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PrintLog.h"; sourceTree = "<group>"; };
+		C825506C1CAA699D00CA6D3D /* NSString+PrintLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PrintLog.m"; sourceTree = "<group>"; };
+		C82550701CAA7F2000CA6D3D /* wxtSubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wxtSubClass.h; sourceTree = "<group>"; };
+		C82550711CAA7F2000CA6D3D /* wxtSubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wxtSubClass.m; sourceTree = "<group>"; };
 		C82B9C1F1C1DB27800FBBDEB /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C82B9C231C1DB27800FBBDEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C82B9C251C1DB27800FBBDEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,7 +122,6 @@
 		C88D65901CA4EAB7004E1D50 /* blockViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blockViewViewController.h; sourceTree = "<group>"; };
 		C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blockViewViewController.m; sourceTree = "<group>"; };
 		C88D65951CA90A8F004E1D50 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		C88D65961CA90A8F004E1D50 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		C88D65991CA90C0D004E1D50 /* yycs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yycs.mp3; sourceTree = "<group>"; };
 		C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pere_david_s_deer-002.jpg"; sourceTree = "<group>"; };
 		C8A617521C29A4000070D101 /* DSC01425.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01425.JPG; sourceTree = "<group>"; };
@@ -168,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88D65971CA90A8F004E1D50 /* AVFoundation.framework in Frameworks */,
-				C88D65981CA90A8F004E1D50 /* AVKit.framework in Frameworks */,
 				C8DCCAA11C916F7300D789AC /* libz.1.2.5.tbd in Frameworks */,
 				C8DCCA991C916F0E00D789AC /* CoreGraphics.framework in Frameworks */,
 				C8DCCA971C916F0300D789AC /* MobileCoreServices.framework in Frameworks */,
@@ -182,11 +185,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C82550671CAA68FF00CA6D3D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C825506B1CAA699D00CA6D3D /* NSString+PrintLog.h */,
+				C825506C1CAA699D00CA6D3D /* NSString+PrintLog.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		C82B9C161C1DB27800FBBDEB = {
 			isa = PBXGroup;
 			children = (
 				C88D65951CA90A8F004E1D50 /* AVFoundation.framework */,
-				C88D65961CA90A8F004E1D50 /* AVKit.framework */,
 				C85D302E1C7DA28800921539 /* Default-568h@2x.png */,
 				C82B9C211C1DB27800FBBDEB /* test */,
 				C82B9C201C1DB27800FBBDEB /* Products */,
@@ -204,6 +215,7 @@
 		C82B9C211C1DB27800FBBDEB /* test */ = {
 			isa = PBXGroup;
 			children = (
+				C82550671CAA68FF00CA6D3D /* Category */,
 				C88D65991CA90C0D004E1D50 /* yycs.mp3 */,
 				C88D658F1CA4EA6A004E1D50 /* blockview */,
 				C87884D71C966A3500F51782 /* UIKit+AFNetworking */,
@@ -226,6 +238,8 @@
 				C814F8761C2AE73F00274CAF /* testclass.h */,
 				C814F8771C2AE73F00274CAF /* testclass.m */,
 				C8C199591C32D28700C2017B /* wxtClass.h */,
+				C82550701CAA7F2000CA6D3D /* wxtSubClass.h */,
+				C82550711CAA7F2000CA6D3D /* wxtSubClass.m */,
 				C8C1995A1C32D28700C2017B /* wxtClass.m */,
 				C8BBE4B61C34189200BE3E63 /* TableViewControllerDemo.h */,
 				C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */,
@@ -468,10 +482,12 @@
 				C87884D61C96605700F51782 /* AFURLSessionManager.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */,
+				C82550721CAA7F2000CA6D3D /* wxtSubClass.m in Sources */,
 				C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */,
 				C87884D11C96605700F51782 /* AFHTTPSessionManager.m in Sources */,
 				C87884D51C96605700F51782 /* AFURLResponseSerialization.m in Sources */,
 				C8DCCA8A1C916CF600D789AC /* ASIDataCompressor.m in Sources */,
+				C825506D1CAA699D00CA6D3D /* NSString+PrintLog.m in Sources */,
 				C87884D41C96605700F51782 /* AFURLRequestSerialization.m in Sources */,
 				C87884F31C966A3500F51782 /* UIRefreshControl+AFNetworking.m in Sources */,
 				C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */,

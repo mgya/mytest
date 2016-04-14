@@ -16,6 +16,9 @@
 #import "codingDataTest.h"
 #import "blockViewViewController.h"
 
+#import "NSString+PrintLog.h"
+
+#import "wxtSubClass.h"
 
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
@@ -209,12 +212,104 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 //    [self pushblock];
     
 
-    [self play];
+ //   [self play];
  
+    UIView * p = [[UIView alloc]init];
+    
+    [p printLog];
+    
+    
+    NSString * wxt = @"我就是我，不一样的烟火";
+    [wxt printLog];
+    
+    
+    
+    
+//    wxtClass * myClass = [[wxtClass alloc]init];
+//    myClass.a = 100;
+//    
+//    wxtSubClass *subClass = [[wxtSubClass alloc]init];
+//    [subClass end];
+    
+    //遍历查找和放入NSHashTable查找
+    [self find];
+    
+
+
+
+    
+
+    
+    
+    
 }
 
 
-
+-(void)find{
+    
+    NSLog(@"kaishi");
+    
+    NSHashTable *list = [[NSHashTable alloc]init];
+    
+    
+    NSInteger w = 0;
+    
+    NSString * A = @"asecfdfdsfesdfm;slfkjqwjerljfdslfkjqwjgfdgfdfsrtefsfjdso;fjsdfe0859038503984werjsdiojfldsajfljrewrewqkljfdsljasdjwerewlrjeqwljrlsjfdsajfsdljfdslfkjqwjerqwerewteqwtjqewjreqwj5312j5321j53jjfsdjfsd;jgdjg0w4jfgfderewteqwtjqewjreqwj5312j5321j53jjfsdjfsd;jgdjg0w4jfgfdgfdgfdfadsdsfegbdfdsfogirpoitor;jgfmdgklfdjgorpeitregfdgfdgfdkqweljtetiticjdso;fjsdfe0859038503984rtqweresdfdsfdsgfdsgfdgtru7657545646546546erqwerewteqwtjqewjreqwj5312j5321j53jjfsdjfsd;jgdjg0w4jkqwel#jtetiticelg";
+    NSString * B = @"jsdfe0859038icjdsofdg9038503984werjsdiojfldsajfljrewrewqkljfdsljasdjwerewlrjeqwljrlsjfdsajfsdljfddgfdgfdsvdfgfdgfdgretretsdgfdgfdhdgdsfdsgertrefgdsgfdglsjfeg";
+    
+    //遍历的方法
+    
+    //    BOOL C = NO;
+    //
+    //        for (int i = 0; i < B.length; i++) {
+    //
+    //            for (int j = 0; j < A.length; j++) {
+    //                w++;
+    //                NSRange  rA = NSMakeRange(j, 1);
+    //                NSRange  rB = NSMakeRange(i, 1);
+    //
+    //
+    //                if ([[A substringWithRange:rA] isEqualToString:[B substringWithRange: rB]] ) {
+    //                    C = YES;
+    //                    break;
+    //
+    //                }else{
+    //                    C = NO;
+    //
+    //                }
+    //            }
+    //
+    //            if (C == NO) {
+    //                break;
+    //            }
+    //        }
+    //    NSLog(@"over");
+    //
+    //    NSLog(@"%d",C);
+    
+    
+    //NSHashTable的方法
+    
+    BOOL C = YES;
+    
+    for (int i = 0; i < A.length; i++) {
+        w++;
+        NSRange  r = NSMakeRange(i, 1);
+        [list addObject:[A substringWithRange:r]];
+    }
+    
+    for (int i = 0; i < B.length; i++) {
+        w++;
+        NSRange  r = NSMakeRange(i, 1);
+        if (![list containsObject:[B substringWithRange:r]]) {
+            C = NO;
+            break;
+        }
+    }
+    NSLog(@"over");
+    NSLog(@"%d",C);
+    NSLog(@"%ld",w);
+}
 
 
 -(void)play{
