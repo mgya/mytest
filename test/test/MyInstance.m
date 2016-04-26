@@ -14,8 +14,6 @@
 
 +(MyInstance*)shareMyInstance{
     
-    
-    
    static MyInstance * test = nil;
     static dispatch_once_t p;
     dispatch_once(&p, ^{
@@ -23,7 +21,6 @@
     });
     
     return test;
-    
 }
 
 

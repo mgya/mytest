@@ -190,13 +190,22 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     // AFHTTP的使用
   //  [self myAFHttp];
     
-    
+    //单例的使用
+    [self MyInstance];
 
 
 }
 
 
-
+-(void)MyInstance{
+    
+    
+    MyInstance *test = [ MyInstance shareMyInstance];
+    
+    MyInstance *test1 = [ MyInstance shareMyInstance];
+    
+    MyInstance *test2 = [ MyInstance shareMyInstance];
+}
 
 
 -(void)chick{
