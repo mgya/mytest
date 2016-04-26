@@ -20,6 +20,9 @@
 
 #import "wxtSubClass.h"
 
+
+#import "MyInstance.h"
+
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
 @interface ViewController ()
@@ -59,6 +62,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     
     UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
@@ -190,6 +194,10 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
 
 }
+
+
+
+
 
 -(void)chick{
     
@@ -1104,6 +1112,10 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
 
 -(void)red:(UIButton*)sender{
+    
+    [DIOpenSDK registerApp:@"didi644344644F69736F6A326976526355" secret:@"f0045afac660f5d2c6ff955bf7b0bb92"];
+
+    [DIOpenSDK showDDPage:self animated:YES params:nil delegate:self];
     self.view.backgroundColor = [UIColor redColor];
 }
 

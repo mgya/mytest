@@ -17,7 +17,10 @@
 #import "avfoundation/AVAudioSession.h"
 
 
-@interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate,AVAudioPlayerDelegate>
+#import "DIOpenSDK/DIOpenSDK.h"
+
+
+@interface ViewController : UIViewController<testdelegate,ASIHTTPRequestDelegate,NSXMLParserDelegate,AVAudioPlayerDelegate,DIOpenSDKDelegate>
 
 
 @property(nonatomic,strong)NSString * test ;
