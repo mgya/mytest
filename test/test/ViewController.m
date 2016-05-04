@@ -20,8 +20,10 @@
 
 #import "wxtSubClass.h"
 
+#import "MyFramerWork/add.h"
 
 #import "MyInstance.h"
+
 
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
@@ -56,9 +58,8 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSLog(@"%@",[self class]);
     NSLog(@"%@",[super class]);
     
-
-    
-    
+    add * hehe = [[add alloc]init];
+    int a = [hehe add:1 b:20];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -1126,6 +1127,14 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
     [DIOpenSDK showDDPage:self animated:YES params:nil delegate:self];
     self.view.backgroundColor = [UIColor redColor];
+//    出租车司机端：
+//    10100000274?nx5ubk
+//    
+//    专车司机端：
+//    13000000113 000113
+//    
+//    乘客端：
+//    13000000112 8888
 }
 
 -(void)yell:(UIButton*)sender{
