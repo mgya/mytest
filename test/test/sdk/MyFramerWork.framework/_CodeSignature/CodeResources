@@ -6,11 +6,15 @@
 	<dict>
 		<key>Headers/MyFramerWork.h</key>
 		<data>
-		2qgmbqYb2YUG7FWKixbnWI6P4No=
+		oPH9Jow0vGT14UUhLq3Rf41wX+w=
 		</data>
 		<key>Headers/add.h</key>
 		<data>
 		FpEwMUUcK0wXCf0ei1tJXSoxSA8=
+		</data>
+		<key>IMG_0024.jpg</key>
+		<data>
+		4i63RJVFxvhquC0/QKVZhyB1hGk=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -27,11 +31,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2qgmbqYb2YUG7FWKixbnWI6P4No=
+			oPH9Jow0vGT14UUhLq3Rf41wX+w=
 			</data>
 			<key>hash2</key>
 			<data>
-			rBx2I6obEpepVG2/u781wPgK74z1MUvOxC0EJ1AqSOU=
+			zy+57URK5RsFveRgN/mUd+sQ4Qdzf3A6T3vlynjGBKo=
 			</data>
 		</dict>
 		<key>Headers/add.h</key>
@@ -43,6 +47,17 @@
 			<key>hash2</key>
 			<data>
 			yZoOvBkCaPbC2pcy7+zSNx5f4vbugVTg2F2uSsTrT/E=
+			</data>
+		</dict>
+		<key>IMG_0024.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4i63RJVFxvhquC0/QKVZhyB1hGk=
+			</data>
+			<key>hash2</key>
+			<data>
+			BnDHuXchYF50EHZ+oIPx44K444SLpSXJg/2o1KkuR3g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
