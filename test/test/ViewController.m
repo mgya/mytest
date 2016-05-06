@@ -20,9 +20,11 @@
 
 #import "wxtSubClass.h"
 
-#import "MyFramerWork/add.h"
+#import "MyFramerWork/MyFramerWork.h"
 
 #import "MyInstance.h"
+
+#import "UIImageView+WebCache.h"
 
 
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
@@ -192,9 +194,10 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
   //  [self myAFHttp];
     
     //单例的使用
-    [self MyInstance];
+ //   [self MyInstance];
+    
 
-
+    
 }
 
 
@@ -262,6 +265,47 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
 }
 
+
+
+-(void)mySdWebImage{
+ 
+    
+    [self mySdWebImage];
+    
+    UIImageView * sdVIew = [[UIImageView alloc]initWithFrame:CGRectMake(0, 300, 100, 100)];
+    
+    [self.view addSubview:sdVIew];
+    
+    NSURL *web = [NSURL URLWithString:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
+    //
+    //
+    //    //加载图片并缓存
+    //    [sdVIew sd_setImageWithURL:web];
+    //
+    //    //加载图片并缓存
+    //    [sdVIew sd_setImageWithURL:web completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    //         NSLog(@"这里可以在图片加载完成之后做些事情");
+    //    }];
+    //
+    //
+    //     //加载图片并缓存，并且占位图片
+    //    [sdVIew sd_setImageWithURL:web placeholderImage:[UIImage imageNamed:@"DSC01425.JPG"] ];
+    //
+    //
+    //     //加载图片并缓存，并且占位图片
+    //    [sdVIew sd_setImageWithURL:web placeholderImage:[UIImage imageNamed:@"DSC01425.JPG"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    //
+    //        NSLog(@"这里可以在图片加载完成之后做些事情");
+    //    }];
+    //
+    //
+    //    //带设置参数的下载
+    //    [sdVIew sd_setImageWithURL:web placeholderImage:[UIImage imageNamed:@"DSC01425.JPG"]  options:SDWebImageRetryFailed];
+    
+    [sdVIew sd_setImageWithURL:web placeholderImage:[UIImage imageNamed:@"DSC01425.JPG"] options:SDWebImageProgressiveDownload completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        NSLog(@"这里可以在图片加载完成之后做些事情");
+    }];
+}
 
 -(void)find{
     

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import"add.h"
 
 //! Project version number for MyFramerWork.
 FOUNDATION_EXPORT double MyFramerWorkVersionNumber;
