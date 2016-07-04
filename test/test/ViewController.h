@@ -13,8 +13,8 @@
 
 #import "AFHTTPSessionManager.h"
 
-#import "avfoundation/AVAudioPlayer.h"
-#import "avfoundation/AVAudioSession.h"
+
+#import <AVFoundation/AVFoundation.h>
 
 
 #import "DIOpenSDK/DIOpenSDK.h"
@@ -24,6 +24,13 @@
 
 
 @property(nonatomic,strong)NSString * test ;
+
+
+-(void)getID:(int)a;
+
+
+
+
 
 
 

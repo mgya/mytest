@@ -28,7 +28,23 @@
     a = 10;
 }
 
-
+- (id)copyWithZone:(nullable NSZone *)zone{
+   
+    wxtClass * temp = [[self class] allocWithZone:zone];
+    temp.name = _name;
+    temp.age = _age;
+    
+    NSInteger a = self.hash;
+    
+    
+    NSInteger b = (NSUInteger)self;
+    
+    
+    return temp;
+    
+    
+    
+}
 
 
 

@@ -26,6 +26,16 @@
 
 #import "UIImageView+WebCache.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+
+#import "weixin.h"
+#import "qq.h"
+
+#import <objc/runtime.h>
+
+
+#define add(x,y) x+y
+
 
 static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/weather_sample/";
 
@@ -120,7 +130,28 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [self.view addSubview:pushClose];
     [self.view addSubview:start];
     
+    
+    wxtClass * one = [[wxtClass alloc]init];
+    one.name = @"wxt";
+    
+    
+    wxtClass * p = [one copy];
+    
+    one.name = @"1111";
+    
+ 
+    NSLog(@"value is %@",p.name);
+    
+    
+    tengxun * myqq = [[qq alloc]init];
+    tengxun * myweixin = [[weixin alloc]init];
+    [myqq eat:myqq];
+    [myweixin eat:myweixin];
+    
 
+
+    
+    
     
     
     //组线程，同时下载多个图片
@@ -196,7 +227,9 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     //单例的使用
  //   [self MyInstance];
     
-
+    
+    //交换类方法和实例方法
+    [self swap];
     
 }
 
@@ -253,15 +286,49 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 //    [subClass end];
     
     //遍历查找和放入NSHashTable查找
-    [self find];
+  //  [self find];
     
-
-
-
     
 
     
+
+
+//震动的代码
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+ 
     
+
+
+  
+
+    
+    
+    
+}
+
+-(void)swap{
+    
+
+    [testclass oneClass];
+    [testclass twoClass];
+    // 获取两个类的类方法
+    Method m1 = class_getClassMethod([testclass class], @selector(oneClass));
+    Method m2 = class_getClassMethod([testclass class], @selector(twoClass));
+    //交换两个类方法
+    method_exchangeImplementations(m1, m2);
+    [testclass oneClass];
+    [testclass twoClass];
+    
+    
+    testclass *myClass = [[testclass alloc]init];
+    [myClass one];
+    [myClass two];
+    Method m3 = class_getInstanceMethod([testclass class], @selector(one));
+    Method m4 = class_getInstanceMethod([testclass class], @selector(two));
+    method_exchangeImplementations(m3, m4);
+    
+    [myClass one];
+    [myClass two];
     
 }
 

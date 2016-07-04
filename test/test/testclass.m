@@ -30,6 +30,21 @@
 
 }
 
++(void)oneClass{
+    NSLog(@"类方法1");
+}
+
++(void)twoClass{
+    NSLog(@"类方法2");
+}
+
+-(void)one{
+    NSLog(@"实例方法1");
+}
+-(void)two{
+     NSLog(@"实例方法2");
+}
+
 
 
 
