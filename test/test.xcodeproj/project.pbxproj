@@ -42,6 +42,8 @@
 		C85D303B1C7DB57400921539 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */; };
 		C86274421CBF5B8300B650D9 /* DIOpenSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C86274401CBF5B8300B650D9 /* DIOpenSDK.bundle */; };
 		C86274431CBF5B8300B650D9 /* DIOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86274411CBF5B8300B650D9 /* DIOpenSDK.framework */; };
+		C875E12E1D2A42D9009434F5 /* UIImage+my_imageName.m in Sources */ = {isa = PBXBuildFile; fileRef = C875E12D1D2A42D9009434F5 /* UIImage+my_imageName.m */; };
+		C875E1341D2A4B42009434F5 /* DSC01425.JPG_new in Resources */ = {isa = PBXBuildFile; fileRef = C875E1331D2A4B42009434F5 /* DSC01425.JPG_new */; };
 		C87884D11C96605700F51782 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884C51C96605700F51782 /* AFHTTPSessionManager.m */; };
 		C87884D21C96605700F51782 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884C81C96605700F51782 /* AFNetworkReachabilityManager.m */; };
 		C87884D31C96605700F51782 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C87884CA1C96605700F51782 /* AFSecurityPolicy.m */; };
@@ -164,6 +166,9 @@
 		C85D303A1C7DB57400921539 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		C86274401CBF5B8300B650D9 /* DIOpenSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DIOpenSDK.bundle; sourceTree = "<group>"; };
 		C86274411CBF5B8300B650D9 /* DIOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DIOpenSDK.framework; sourceTree = "<group>"; };
+		C875E12C1D2A42D9009434F5 /* UIImage+my_imageName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+my_imageName.h"; sourceTree = "<group>"; };
+		C875E12D1D2A42D9009434F5 /* UIImage+my_imageName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+my_imageName.m"; sourceTree = "<group>"; };
+		C875E1331D2A4B42009434F5 /* DSC01425.JPG_new */ = {isa = PBXFileReference; lastKnownFileType = file; path = DSC01425.JPG_new; sourceTree = "<group>"; };
 		C87884C41C96605700F51782 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		C87884C51C96605700F51782 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		C87884C61C96605700F51782 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -314,6 +319,8 @@
 			children = (
 				C825506B1CAA699D00CA6D3D /* NSString+PrintLog.h */,
 				C825506C1CAA699D00CA6D3D /* NSString+PrintLog.m */,
+				C875E12C1D2A42D9009434F5 /* UIImage+my_imageName.h */,
+				C875E12D1D2A42D9009434F5 /* UIImage+my_imageName.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				C82B9C291C1DB27800FBBDEB /* ViewController.m */,
 				C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */,
 				C8A617541C29A44B0070D101 /* DSC01529.JPG */,
+				C875E1331D2A4B42009434F5 /* DSC01425.JPG_new */,
 				C8A617521C29A4000070D101 /* DSC01425.JPG */,
 				C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */,
 				C82B9C331C1DB27800FBBDEB /* Info.plist */,
@@ -594,6 +602,7 @@
 				C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */,
 				C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */,
 				C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */,
+				C875E1341D2A4B42009434F5 /* DSC01425.JPG_new in Resources */,
 				C85D302F1C7DA28800921539 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +645,7 @@
 				C81333711CDB486700722AF2 /* UIImage+WebP.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
 				C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */,
+				C875E12E1D2A42D9009434F5 /* UIImage+my_imageName.m in Sources */,
 				C82550721CAA7F2000CA6D3D /* wxtSubClass.m in Sources */,
 				C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */,
 				C87884D11C96605700F51782 /* AFHTTPSessionManager.m in Sources */,

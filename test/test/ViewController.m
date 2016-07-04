@@ -1,3 +1,4 @@
+
 //
 //  ViewController.m
 //  test
@@ -59,6 +60,8 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     UIButton * start;
     
     AVAudioPlayer *audioPlayer;
+    
+    UIImageView *zhezhaoImageView;
 
 }
 
@@ -96,7 +99,9 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     myImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"DSC01425.JPG"]];
     
+    
     [myImageView setFrame:CGRectMake(100, 400, 320, 300)];
+
     
     [self.view addSubview:myImageView];
     
@@ -229,8 +234,66 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
     //交换类方法和实例方法
-    [self swap];
+ //   [self swap];
     
+    
+    unsigned int outCount = 0;
+    Ivar *ivars = class_copyIvarList([UIImage class], &outCount);
+    
+    // 遍历所有成员变量
+    for (int i = 0; i < outCount; i++) {
+        // 取出i位置对应的成员变量
+        Ivar ivar = ivars[i];
+        const char *name = ivar_getName(ivar);
+        const char *type = ivar_getTypeEncoding(ivar);
+        NSLog(@"成员变量名：%s 成员变量类型：%s",name,type);
+    }
+    
+
+    
+        //刮开涂层的效果
+   // [self openImage];
+    
+}
+
+
+-(void)openImage{
+    //刮开涂层的效果
+    
+    UILabel * myLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 400, 100, 100)];
+    myLabel.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:myLabel];
+    myLabel.text = @"大家都来\n磨擦磨擦\n似魔鬼的\n步伐步伐";
+    myLabel.numberOfLines = 0;
+    myLabel.textAlignment = NSTextAlignmentCenter;
+    
+    zhezhaoImageView = [[UIImageView alloc]initWithFrame:myLabel.frame];
+    zhezhaoImageView.image = [UIImage imageNamed:@"DSC01425.JPG"];
+    [self.view addSubview:zhezhaoImageView];
+
+}
+
+//刮开涂层的效果移动时间
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    // 触摸任意位置
+    UITouch *touch = touches.anyObject;
+    // 触摸位置在图片上的坐标
+    CGPoint cententPoint = [touch locationInView:zhezhaoImageView];
+    // 设置清除点的大小
+    CGRect  rect = CGRectMake(cententPoint.x, cententPoint.y, 20, 20);
+    // 默认是去创建一个透明的视图
+    UIGraphicsBeginImageContextWithOptions(zhezhaoImageView.bounds.size, NO, 0);
+    // 获取上下文(画板)
+    CGContextRef ref = UIGraphicsGetCurrentContext();
+    // 把imageView的layer映射到上下文中
+    [zhezhaoImageView.layer renderInContext:ref];
+    // 清除划过的区域
+    CGContextClearRect(ref, rect);
+    // 获取图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    // 结束图片的画板, (意味着图片在上下文中消失)
+    UIGraphicsEndImageContext();
+    zhezhaoImageView.image = image;
 }
 
 
