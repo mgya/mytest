@@ -62,6 +62,12 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     AVAudioPlayer *audioPlayer;
     
     UIImageView *zhezhaoImageView;
+    
+    UIScrollView *scrollView;
+
+    int offset;
+    
+    NSMutableArray *contentViews;
 
 }
 
@@ -154,7 +160,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [myweixin eat:myweixin];
     
 
-
+    contentViews = [[NSMutableArray alloc]init];
     
     
     
@@ -254,6 +260,10 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
         //刮开涂层的效果
    // [self openImage];
     
+    
+    
+    
+    
 }
 
 
@@ -351,13 +361,13 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     //遍历查找和放入NSHashTable查找
   //  [self find];
     
-    
-
+    offset = 200;
+    [self myScrollView];
     
 
 
 //震动的代码
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+ //   AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
  
     
 
@@ -368,6 +378,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
 }
+
 
 -(void)swap{
     
@@ -909,7 +920,52 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 
 }
 
+
+-(void)myScrollView{
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 50, 200, 100)];
+    scrollView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:scrollView];
+    
+    scrollView.contentSize = CGSizeMake(600, 100);
+    
+    scrollView.userInteractionEnabled = NO;
+    
+    
+    UILabel *view1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 100)];
+    view1.text = @"1111111";
+    view1.backgroundColor = [UIColor redColor];
+    
+    UILabel *view2 = [[UILabel alloc]initWithFrame:CGRectMake(200, 0, 200, 100)];
+    view2.text = @"2222222";
+    view2.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *view3 = [[UILabel alloc]initWithFrame:CGRectMake(400, 0, 200, 100)];
+    view3.text = @"33333333";
+    view3.backgroundColor = [UIColor yellowColor];
+    
+    
+    
+    
+    [contentViews addObject:view1];
+    [contentViews addObject:view2];
+    [contentViews addObject:view3];
+    
+    [scrollView addSubview:view1];
+    [scrollView addSubview:view2];
+    [scrollView addSubview:view3];
+    
+}
+
 -(void)close{
+    
+    if (offset == 600) {
+        offset = 0;
+    }
+    
+    CGPoint newOffset = CGPointMake(offset,0);
+
+    [scrollView setContentOffset:newOffset animated:YES];
+    offset+=200;
     
     //取消掉之前的所有通知
     //  [[UIApplication sharedApplication] cancelAllLocalNotifications];
