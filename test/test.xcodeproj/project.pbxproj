@@ -66,6 +66,9 @@
 		C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617521C29A4000070D101 /* DSC01425.JPG */; };
 		C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */ = {isa = PBXBuildFile; fileRef = C8A617541C29A44B0070D101 /* DSC01529.JPG */; };
 		C8A6E23C1C2304F400C77EA7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */; };
+		C8B156591D373C9900FB2A13 /* YLGIFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B156551D373C9900FB2A13 /* YLGIFImage.m */; };
+		C8B1565A1D373C9900FB2A13 /* YLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8B156581D373C9900FB2A13 /* YLImageView.m */; };
+		C8B1565D1D373D3300FB2A13 /* joy.gif in Resources */ = {isa = PBXBuildFile; fileRef = C8B1565C1D373D3300FB2A13 /* joy.gif */; };
 		C8BBE4B81C34189200BE3E63 /* TableViewControllerDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */; };
 		C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8C1995A1C32D28700C2017B /* wxtClass.m */; };
 		C8DCCA6E1C902B4D00D789AC /* codingData.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCCA6D1C902B4D00D789AC /* codingData.m */; };
@@ -84,6 +87,7 @@
 		C8DCCA971C916F0300D789AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCCA961C916F0300D789AC /* MobileCoreServices.framework */; };
 		C8DCCA991C916F0E00D789AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCCA981C916F0E00D789AC /* CoreGraphics.framework */; };
 		C8DCCAA11C916F7300D789AC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCCA9A1C916F2300D789AC /* libz.1.2.5.tbd */; };
+		C8DEBE611D36025100483089 /* gifView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEBE601D36025100483089 /* gifView.m */; };
 		C8E08CA91CD33977004FDA97 /* MyFramerWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C8F1DC561CCE10E700897B59 /* MyInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1DC551CCE10E700897B59 /* MyInstance.m */; };
 /* End PBXBuildFile section */
@@ -210,6 +214,12 @@
 		C8A617521C29A4000070D101 /* DSC01425.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01425.JPG; sourceTree = "<group>"; };
 		C8A617541C29A44B0070D101 /* DSC01529.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DSC01529.JPG; sourceTree = "<group>"; };
 		C8A6E23B1C2304F400C77EA7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C8B156541D373C9900FB2A13 /* YLGIFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLGIFImage.h; sourceTree = "<group>"; };
+		C8B156551D373C9900FB2A13 /* YLGIFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLGIFImage.m; sourceTree = "<group>"; };
+		C8B156561D373C9900FB2A13 /* YLGIFImageInSwiftProjectDemo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YLGIFImageInSwiftProjectDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		C8B156571D373C9900FB2A13 /* YLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLImageView.h; sourceTree = "<group>"; };
+		C8B156581D373C9900FB2A13 /* YLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLImageView.m; sourceTree = "<group>"; };
+		C8B1565C1D373D3300FB2A13 /* joy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = joy.gif; sourceTree = "<group>"; };
 		C8BBE4B61C34189200BE3E63 /* TableViewControllerDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerDemo.h; sourceTree = "<group>"; };
 		C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerDemo.m; sourceTree = "<group>"; };
 		C8C199591C32D28700C2017B /* wxtClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wxtClass.h; sourceTree = "<group>"; };
@@ -247,6 +257,8 @@
 		C8DCCA9A1C916F2300D789AC /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		C8DCCA9C1C916F2C00D789AC /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		C8DCCA9F1C916F5100D789AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C8DEBE5F1D36025100483089 /* gifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gifView.h; sourceTree = "<group>"; };
+		C8DEBE601D36025100483089 /* gifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gifView.m; sourceTree = "<group>"; };
 		C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyFramerWork.framework; sourceTree = "<group>"; };
 		C8F1DC541CCE10E700897B59 /* MyInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInstance.h; sourceTree = "<group>"; };
 		C8F1DC551CCE10E700897B59 /* MyInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInstance.m; sourceTree = "<group>"; };
@@ -359,6 +371,8 @@
 				C85D30381C7DB57400921539 /* Keychain */,
 				C82B9C251C1DB27800FBBDEB /* AppDelegate.h */,
 				C82B9C261C1DB27800FBBDEB /* AppDelegate.m */,
+				C8DEBE5F1D36025100483089 /* gifView.h */,
+				C8DEBE601D36025100483089 /* gifView.m */,
 				C82B9C281C1DB27800FBBDEB /* ViewController.h */,
 				C82B9C291C1DB27800FBBDEB /* ViewController.m */,
 				C8A617501C2995FE0070D101 /* pere_david_s_deer-002.jpg */,
@@ -412,6 +426,7 @@
 		C862743F1CBF5B8300B650D9 /* sdk */ = {
 			isa = PBXGroup;
 			children = (
+				C8B156531D373C9900FB2A13 /* YLGIFImage */,
 				C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */,
 				C86274401CBF5B8300B650D9 /* DIOpenSDK.bundle */,
 				C86274411CBF5B8300B650D9 /* DIOpenSDK.framework */,
@@ -473,6 +488,19 @@
 				C88D65911CA4EAB7004E1D50 /* blockViewViewController.m */,
 			);
 			name = blockview;
+			sourceTree = "<group>";
+		};
+		C8B156531D373C9900FB2A13 /* YLGIFImage */ = {
+			isa = PBXGroup;
+			children = (
+				C8B1565C1D373D3300FB2A13 /* joy.gif */,
+				C8B156541D373C9900FB2A13 /* YLGIFImage.h */,
+				C8B156551D373C9900FB2A13 /* YLGIFImage.m */,
+				C8B156561D373C9900FB2A13 /* YLGIFImageInSwiftProjectDemo-Bridging-Header.h */,
+				C8B156571D373C9900FB2A13 /* YLImageView.h */,
+				C8B156581D373C9900FB2A13 /* YLImageView.m */,
+			);
+			path = YLGIFImage;
 			sourceTree = "<group>";
 		};
 		C8DCCA6B1C902B1300D789AC /* coodingData */ = {
@@ -602,6 +630,7 @@
 				C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */,
 				C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */,
 				C8A617511C2995FE0070D101 /* pere_david_s_deer-002.jpg in Resources */,
+				C8B1565D1D373D3300FB2A13 /* joy.gif in Resources */,
 				C875E1341D2A4B42009434F5 /* DSC01425.JPG_new in Resources */,
 				C85D302F1C7DA28800921539 /* Default-568h@2x.png in Resources */,
 			);
@@ -615,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C813336E1CDB486700722AF2 /* UIButton+WebCache.m in Sources */,
+				C8DEBE611D36025100483089 /* gifView.m in Sources */,
 				C8DCCA711C9114EA00D789AC /* codingDataTest.m in Sources */,
 				C8DCCA891C916CF600D789AC /* ASIAuthenticationDialog.m in Sources */,
 				C87884D31C96605700F51782 /* AFSecurityPolicy.m in Sources */,
@@ -653,6 +683,8 @@
 				C8495C241D1914DC00EDACB9 /* qq.m in Sources */,
 				C8DCCA8A1C916CF600D789AC /* ASIDataCompressor.m in Sources */,
 				C8F1DC561CCE10E700897B59 /* MyInstance.m in Sources */,
+				C8B156591D373C9900FB2A13 /* YLGIFImage.m in Sources */,
+				C8B1565A1D373C9900FB2A13 /* YLImageView.m in Sources */,
 				C81333741CDB486700722AF2 /* UIView+WebCacheOperation.m in Sources */,
 				C813336D1CDB486700722AF2 /* SDWebImagePrefetcher.m in Sources */,
 				C825506D1CAA699D00CA6D3D /* NSString+PrintLog.m in Sources */,

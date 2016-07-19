@@ -35,6 +35,12 @@
 #import <objc/runtime.h>
 
 
+#import "gifView.h"
+
+#import "YLGIFImage.h"
+#import "YLImageView.h"
+
+
 #define add(x,y) x+y
 
 
@@ -79,13 +85,36 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSLog(@"%@",[self class]);
     NSLog(@"%@",[super class]);
     
+    
+//    gifView * vc = [[gifView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    
+// 
+//    
+//    NSURL * nsUrl = [NSURL URLWithString:@"http://img.gaoxiaogif.cn/GaoxiaoGiffiles/images/2015/11/25/haiguotou.gif"];
+//    NSData * nsData = [NSData dataWithContentsOfURL:nsUrl];
+//    
+//    [vc loadData:nsData MIMEType:@"image/gif" textEncodingName:nil baseURL:nil];
+//    
+//    vc.userInteractionEnabled = NO;
+//    
+//    [self.view addSubview:vc];
+//    return;
+    
+    
+    YLImageView* imageView = [[YLImageView alloc] initWithFrame:self.view.frame];
+    CGFloat centerX = self.view.center.x;
+    [imageView setCenter:CGPointMake(centerX, self.view.center.y)];
+    [self.view addSubview:imageView];
+    imageView.image = [YLGIFImage imageNamed:@"joy.gif"];
+    
+    
     add * hehe = [[add alloc]init];
     int a = [hehe add:1 b:20];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    return;
     
     UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
     red.backgroundColor = [UIColor grayColor];
