@@ -8,6 +8,12 @@
 
 #import "wxtClass.h"
 
-@interface wxtSubClass : wxtClass
+
+
+@interface wxtSubClass : wxtClass{
+    @public
+    double dou;
+}
+
 
 @end

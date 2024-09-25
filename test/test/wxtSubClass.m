@@ -10,4 +10,17 @@
 
 @implementation wxtSubClass
 
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"%@", NSStringFromClass([self class]));
+        NSLog(@"%@", NSStringFromClass([super class]));
+    }
+    return self;
+}
+
+
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "gifView.h"
 
 
 @interface AppDelegate ()
@@ -26,16 +27,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
-    // 处理iOS8本地推送不能收到的问题
-    float sysVersion=[[UIDevice currentDevice]systemVersion].floatValue;
-    if (sysVersion>=8.0) {
-        UIUserNotificationType type=UIUserNotificationTypeBadge | UIUserNotificationTypeAlert | UIUserNotificationTypeSound;
-        UIUserNotificationSettings *setting=[UIUserNotificationSettings settingsForTypes:type categories:nil];
-        [[UIApplication sharedApplication]registerUserNotificationSettings:setting];
-    }
-
-
-
     
     
     window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -47,8 +38,36 @@
     [window setRootViewController:naviMain];
     
     [window makeKeyAndVisible];
-    
+ 
+   
     return YES;
+}
+
+
+
+-(NSString*)find1:(NSString*)inString{
+    
+        
+    
+    
+    NSMutableArray *arr = [NSMutableArray array];
+    
+    for (int i = 0;  i < inString.length ; i++) {
+        [arr addObject:[inString substringWithRange:NSMakeRange(i, 1)]];
+    }
+    NSLog(@"arr = %@",arr);
+    
+    for (int i = 0;  i < inString.length ; i++) {
+        NSArray *temp = [inString componentsSeparatedByString:arr[i]];
+        NSLog(@"tempp=%@",temp);
+        if (temp.count == 2) {
+            return arr[i];
+        }
+    }
+
+     
+    return @"no-find";
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

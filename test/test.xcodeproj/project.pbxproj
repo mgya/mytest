@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C81333401CDB467100722AF2 /* MyFramerWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */; };
-		C81333411CDB467100722AF2 /* MyFramerWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C81333651CDB486700722AF2 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333451CDB486700722AF2 /* MKAnnotationView+WebCache.m */; };
 		C81333661CDB486700722AF2 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333471CDB486700722AF2 /* NSData+ImageContentType.m */; };
 		C81333671CDB486700722AF2 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333491CDB486700722AF2 /* SDImageCache.m */; };
@@ -88,23 +86,8 @@
 		C8DCCA991C916F0E00D789AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCCA981C916F0E00D789AC /* CoreGraphics.framework */; };
 		C8DCCAA11C916F7300D789AC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCCA9A1C916F2300D789AC /* libz.1.2.5.tbd */; };
 		C8DEBE611D36025100483089 /* gifView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DEBE601D36025100483089 /* gifView.m */; };
-		C8E08CA91CD33977004FDA97 /* MyFramerWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C8F1DC561CCE10E700897B59 /* MyInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1DC551CCE10E700897B59 /* MyInstance.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C81333421CDB467100722AF2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C81333411CDB467100722AF2 /* MyFramerWork.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C81333441CDB486700722AF2 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -259,7 +242,6 @@
 		C8DCCA9F1C916F5100D789AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C8DEBE5F1D36025100483089 /* gifView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gifView.h; sourceTree = "<group>"; };
 		C8DEBE601D36025100483089 /* gifView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gifView.m; sourceTree = "<group>"; };
-		C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyFramerWork.framework; sourceTree = "<group>"; };
 		C8F1DC541CCE10E700897B59 /* MyInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInstance.h; sourceTree = "<group>"; };
 		C8F1DC551CCE10E700897B59 /* MyInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInstance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,8 +254,6 @@
 				C88D65971CA90A8F004E1D50 /* AVFoundation.framework in Frameworks */,
 				C8DCCAA11C916F7300D789AC /* libz.1.2.5.tbd in Frameworks */,
 				C8DCCA991C916F0E00D789AC /* CoreGraphics.framework in Frameworks */,
-				C8E08CA91CD33977004FDA97 /* MyFramerWork.framework in Frameworks */,
-				C81333401CDB467100722AF2 /* MyFramerWork.framework in Frameworks */,
 				C8DCCA971C916F0300D789AC /* MobileCoreServices.framework in Frameworks */,
 				C8DCCA951C916EF900D789AC /* SystemConfiguration.framework in Frameworks */,
 				C8DCCA931C916EEC00D789AC /* CFNetwork.framework in Frameworks */,
@@ -427,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				C8B156531D373C9900FB2A13 /* YLGIFImage */,
-				C8E08CA81CD33977004FDA97 /* MyFramerWork.framework */,
 				C86274401CBF5B8300B650D9 /* DIOpenSDK.bundle */,
 				C86274411CBF5B8300B650D9 /* DIOpenSDK.framework */,
 			);
@@ -570,7 +549,6 @@
 				C82B9C1B1C1DB27800FBBDEB /* Sources */,
 				C82B9C1C1C1DB27800FBBDEB /* Frameworks */,
 				C82B9C1D1C1DB27800FBBDEB /* Resources */,
-				C81333421CDB467100722AF2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -592,7 +570,8 @@
 				TargetAttributes = {
 					C82B9C1E1C1DB27800FBBDEB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 475AFHP8AL;
+						DevelopmentTeam = D93Y8ECX6F;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -606,6 +585,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -795,21 +775,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D93Y8ECX6F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test/sdk",
 				);
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangxt.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b6561b4f-e1d1-4415-a619-797b793b2d39";
-				PROVISIONING_PROFILE_SPECIFIER = 475AFHP8AL/TZdev;
+				PROVISIONING_PROFILE = "d1146d78-699f-48e8-bf09-f940de05a2b8";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -817,21 +798,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qianli Ma (4NABK57F3C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qianli Ma (4NABK57F3C)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D93Y8ECX6F;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test/sdk",
 				);
 				INFOPLIST_FILE = test/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huying.ucaller;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wangxt.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b6561b4f-e1d1-4415-a619-797b793b2d39";
-				PROVISIONING_PROFILE_SPECIFIER = 475AFHP8AL/TZdev;
+				PROVISIONING_PROFILE = "d1146d78-699f-48e8-bf09-f940de05a2b8";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

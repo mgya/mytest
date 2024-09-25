@@ -10,4 +10,10 @@
 
 @interface gifView : UIWebView
 
+
+@property(nonatomic,assign)NSInteger  aa;
+@property(nonatomic,copy)NSString  *bb;
+
+@property(nonatomic,copy)NSMutableString *cc;
+
 @end

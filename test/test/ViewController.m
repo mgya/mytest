@@ -21,7 +21,6 @@
 
 #import "wxtSubClass.h"
 
-#import "MyFramerWork/MyFramerWork.h"
 
 #import "MyInstance.h"
 
@@ -82,9 +81,14 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 - (void)viewDidLoad {
     
     
+    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.frame = CGRectMake(10, 30, 60, 200);
+    
+    
     NSLog(@"%@",[self class]);
     NSLog(@"%@",[super class]);
-    
+    wxtSubClass *subClass = [[wxtSubClass alloc]init];
+
     
 //    gifView * vc = [[gifView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
 //    
@@ -101,23 +105,27 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 //    return;
     
     
-    YLImageView* imageView = [[YLImageView alloc] initWithFrame:self.view.frame];
-    CGFloat centerX = self.view.center.x;
-    [imageView setCenter:CGPointMake(centerX, self.view.center.y)];
-    [self.view addSubview:imageView];
-    imageView.image = [YLGIFImage imageNamed:@"joy.gif"];
-    
-    
-    add * hehe = [[add alloc]init];
-    int a = [hehe add:1 b:20];
-    
-    [super viewDidLoad];
+//    YLImageView* imageView = [[YLImageView alloc] initWithFrame:self.view.frame];
+//    CGFloat centerX = self.view.center.x;
+//    [imageView setCenter:CGPointMake(centerX, self.view.center.y)];
+//    [self.view addSubview:imageView];
+//    imageView.image = [YLGIFImage imageNamed:@"joy.gif"];
+//    
+//    
+//    
+//    NSLog(@"1111");
+//    
+//    
+//    
+//    
+//    
+//    [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    return;
+   // return;
     
     UIButton * red = [[UIButton alloc]initWithFrame:CGRectMake(50, 100, 100, 100)];
-    red.backgroundColor = [UIColor grayColor];
+    red.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:red];
     [red addTarget:self action:@selector(red:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -1133,6 +1141,8 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
                                                    selector:@selector(longTime:)
                                                      object:@"http://img.ivsky.com/download/img/tupian/pic/201509/11/pere_david_s_deer-002.jpg"];
     [myThread start];
+    
+    [NSThread detachNewThreadSelector:@selector(longTime:) toTarget:self withObject:nil];
 }
 
 

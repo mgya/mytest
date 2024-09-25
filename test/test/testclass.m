@@ -8,6 +8,7 @@
 
 #import "testclass.h"
 
+
 @implementation testclass
 
 
@@ -32,6 +33,7 @@
 
 +(void)oneClass{
     NSLog(@"类方法1");
+    
 }
 
 +(void)twoClass{

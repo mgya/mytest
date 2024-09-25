@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface wxtClass : NSObject<NSCopying>
+@interface wxtClass : NSObject<NSCopying>{
+    }
 
 @property(assign,nonatomic)NSInteger age;
 @property(retain,nonatomic)NSString * name;

@@ -7,6 +7,7 @@
 //
 
 #import "wxtClass.h"
+#import "wxtSubClass.h"
 
 
 @interface wxtClass()
@@ -26,6 +27,8 @@
 -(void)end{
     NSLog(@"end");
     a = 10;
+    wxtSubClass *df;
+    df->dou = 10;
 }
 
 - (id)copyWithZone:(nullable NSZone *)zone{
