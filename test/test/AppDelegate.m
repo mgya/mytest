@@ -38,8 +38,7 @@
     [window setRootViewController:naviMain];
     
     [window makeKeyAndVisible];
- 
-   
+
     return YES;
 }
 

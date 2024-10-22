@@ -24,6 +24,10 @@
 
 @synthesize a;
 
++(void)load{
+    NSLog(@"wojiazaibaba");
+}
+
 -(void)end{
     NSLog(@"end");
     a = 10;
@@ -31,16 +35,15 @@
     df->dou = 10;
 }
 
+-(void)printName{
+    NSLog(@"我是爸爸");
+}
+
 - (id)copyWithZone:(nullable NSZone *)zone{
    
     wxtClass * temp = [[self class] allocWithZone:zone];
     temp.name = _name;
     temp.age = _age;
-    
-    NSInteger a = self.hash;
-    
-    
-    NSInteger b = (NSUInteger)self;
     
     
     return temp;

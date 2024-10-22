@@ -11,13 +11,15 @@
 #import <AddressBook/AddressBook.h>
 #import "wxtClass.h"
 #import "KeychainItemWrapper.h"
-#import "KvcClass.h"
-#import "KvoClass.h"
 #import "codingData.h"
 #import "codingDataTest.h"
 #import "blockViewViewController.h"
-
+#import "myUibutton.h"
 #import "NSString+PrintLog.h"
+
+#import "wxtClass+wangyuqi.h"
+#import "wxtClass+leilei.h"
+
 
 #import "wxtSubClass.h"
 
@@ -38,6 +40,9 @@
 
 #import "YLGIFImage.h"
 #import "YLImageView.h"
+
+#import "wxtObserve.h"
+
 
 
 #define add(x,y) x+y
@@ -62,7 +67,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSMutableArray *parserObjects;
     NSString *parserString;
     
-    UIButton * start;
+    myUibutton * start;
     
     AVAudioPlayer *audioPlayer;
     
@@ -89,6 +94,38 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSLog(@"%@",[super class]);
     wxtSubClass *subClass = [[wxtSubClass alloc]init];
 
+    
+    wxtClass *wxt = [[wxtClass alloc] init];
+    
+    
+    [wxt addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:NULL];
+     
+     
+     
+     
+    
+    
+    wxt.age = 10;
+    [wxt printName];
+    
+    wxt.name = @"ttt";
+    
+    NSLog(@"---%@",wxt.name) ;
+    
+    [wxt setValue:@"wangxt" forKey:@"name"];
+    
+    NSLog(@"---%@",[wxt valueForKey:@"age"]) ;
+    
+    NSLog(@"---%@",wxt.name) ;
+    
+    
+    
+    wxtObserve * wxtServer = [[wxtObserve alloc]init];
+    [wxt addObserver:wxtServer forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    
+   
+    wxt.name = @"sss";
+  
     
 //    gifView * vc = [[gifView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
 //    
@@ -168,11 +205,19 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     [self.view addSubview:pushClose];
     
     
-    start = [[UIButton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
-    start.backgroundColor = [UIColor redColor];
+    start = [[myUibutton alloc]initWithFrame:CGRectMake(150, 300, 100, 100)];
+    start.backgroundColor = [UIColor blueColor];
     [start setTitle:@"开始测试"forState:UIControlStateNormal];
     start.titleLabel.font = [UIFont systemFontOfSize:12];
+   // start.layer.masksToBounds = YES;
+    start.layer.cornerRadius = 10;
     [start addTarget:self action:@selector(chick) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *a = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 120, 50)];
+    a.backgroundColor = [UIColor yellowColor];
+    a.layer.shadowOpacity = 0.5;
+    a.layer.shadowColor = UIColor.orangeColor.CGColor;
+    [start addSubview:a];
     
     [self.view addSubview:pushOpen];
     [self.view addSubview:pushClose];
@@ -300,6 +345,13 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
     
+    
+}
+
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    
+    NSLog(@"gaibianla--self");
     
 }
 
@@ -879,47 +931,6 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     NSLog(@"%@,%zd",newdata.name,newdata.age);
 }
 
-
--(void)KVC{
-    
-    
-    KvcClass * myKVC = [[KvcClass alloc]init];
-    NSLog(@"%@",[myKVC valueForKey:@"name" ]);
-    [myKVC setValue:@"王😄" forKey:@"name"];
-    NSLog(@"%@",[myKVC valueForKey:@"name"]);
-    
-    
-    NSLog(@"%@",[myKVC valueForKey:@"age" ]);
-    [myKVC setValue:[NSNumber numberWithInt:33] forKey:@"age"];
-    NSLog(@"%@",[myKVC valueForKey:@"age"]);
-    
-    KvoClass *myKVO = [[KvoClass alloc]init];
-    [myKVO watchPersonForChangeOfAddress:myKVC];
-    
-    [myKVC setValue:@"王哈哈" forKey:@"name"];
-    
-    
-    
-    NSDictionary * dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"wang",@"name", [NSNumber numberWithInt:34],@"age", nil];
-    
-
-    
-    [myKVC setValuesForKeysWithDictionary:dic];
-    
-    NSLog(@"%@",[myKVC valueForKey:@"name"]);
-    NSLog(@"%@",[myKVC valueForKey:@"age"]);
-    
-    
-    FullName* full = [[FullName alloc]init];
-    [full setValue:@"王" forKey:@"first"];
-    
-    [myKVC setValue:full forKeyPath:@"full"];
-    NSString *firstname = [myKVC valueForKeyPath:@"full.first"];
-    
-    NSLog(@"%@",firstname);
-   
-    
-}
 
 -(void)open{
     //取消掉之前的所有通知

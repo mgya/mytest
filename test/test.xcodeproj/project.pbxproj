@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B811B9352CA81ED100BDD11C /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B811B9342CA81ED100BDD11C /* Location.gpx */; };
+		B88EAD232CC0AB060062F87C /* wxtClass+wangyuqi.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EAD222CC0AB060062F87C /* wxtClass+wangyuqi.m */; };
+		B88EAD262CC0AB1F0062F87C /* wxtClass+leilei.m in Sources */ = {isa = PBXBuildFile; fileRef = B88EAD252CC0AB1F0062F87C /* wxtClass+leilei.m */; };
+		B89700FE2CC80D0C00DD5ED3 /* wxtObserve.m in Sources */ = {isa = PBXBuildFile; fileRef = B89700FD2CC80D0C00DD5ED3 /* wxtObserve.m */; };
+		B8DF6ACE2CB6380E009F5694 /* myUibutton.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF6ACD2CB6380E009F5694 /* myUibutton.m */; };
 		C81333651CDB486700722AF2 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333451CDB486700722AF2 /* MKAnnotationView+WebCache.m */; };
 		C81333661CDB486700722AF2 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333471CDB486700722AF2 /* NSData+ImageContentType.m */; };
 		C81333671CDB486700722AF2 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C81333491CDB486700722AF2 /* SDImageCache.m */; };
@@ -30,8 +35,6 @@
 		C82B9C271C1DB27800FBBDEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C261C1DB27800FBBDEB /* AppDelegate.m */; };
 		C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82B9C291C1DB27800FBBDEB /* ViewController.m */; };
 		C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */; };
-		C8314AE81C86C05C00BA8E46 /* KvcClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8314AE71C86C05C00BA8E46 /* KvcClass.m */; };
-		C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C8314AEA1C86D61C00BA8E46 /* KvoClass.m */; };
 		C8495C1E1D19140100EDACB9 /* tengxun.m in Sources */ = {isa = PBXBuildFile; fileRef = C8495C1D1D19140100EDACB9 /* tengxun.m */; };
 		C8495C211D1914CD00EDACB9 /* weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = C8495C201D1914CD00EDACB9 /* weixin.m */; };
 		C8495C241D1914DC00EDACB9 /* qq.m in Sources */ = {isa = PBXBuildFile; fileRef = C8495C231D1914DC00EDACB9 /* qq.m */; };
@@ -90,6 +93,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B811B9342CA81ED100BDD11C /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		B88EAD212CC0AB060062F87C /* wxtClass+wangyuqi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wxtClass+wangyuqi.h"; sourceTree = "<group>"; };
+		B88EAD222CC0AB060062F87C /* wxtClass+wangyuqi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "wxtClass+wangyuqi.m"; sourceTree = "<group>"; };
+		B88EAD242CC0AB1F0062F87C /* wxtClass+leilei.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wxtClass+leilei.h"; sourceTree = "<group>"; };
+		B88EAD252CC0AB1F0062F87C /* wxtClass+leilei.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "wxtClass+leilei.m"; sourceTree = "<group>"; };
+		B89700FC2CC80D0C00DD5ED3 /* wxtObserve.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wxtObserve.h; sourceTree = "<group>"; };
+		B89700FD2CC80D0C00DD5ED3 /* wxtObserve.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wxtObserve.m; sourceTree = "<group>"; };
+		B8DF6ACC2CB6380E009F5694 /* myUibutton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myUibutton.h; sourceTree = "<group>"; };
+		B8DF6ACD2CB6380E009F5694 /* myUibutton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myUibutton.m; sourceTree = "<group>"; };
 		C81333441CDB486700722AF2 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		C81333451CDB486700722AF2 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		C81333461CDB486700722AF2 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -137,10 +149,6 @@
 		C82B9C291C1DB27800FBBDEB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C82B9C2E1C1DB27800FBBDEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C82B9C331C1DB27800FBBDEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8314AE61C86C05C00BA8E46 /* KvcClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvcClass.h; sourceTree = "<group>"; };
-		C8314AE71C86C05C00BA8E46 /* KvcClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KvcClass.m; sourceTree = "<group>"; };
-		C8314AE91C86D61C00BA8E46 /* KvoClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvoClass.h; sourceTree = "<group>"; };
-		C8314AEA1C86D61C00BA8E46 /* KvoClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KvoClass.m; sourceTree = "<group>"; };
 		C8495C1C1D19140100EDACB9 /* tengxun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tengxun.h; sourceTree = "<group>"; };
 		C8495C1D1D19140100EDACB9 /* tengxun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tengxun.m; sourceTree = "<group>"; };
 		C8495C1F1D1914CD00EDACB9 /* weixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weixin.h; sourceTree = "<group>"; };
@@ -365,13 +373,22 @@
 				C814F8761C2AE73F00274CAF /* testclass.h */,
 				C814F8771C2AE73F00274CAF /* testclass.m */,
 				C8C199591C32D28700C2017B /* wxtClass.h */,
+				B89700FC2CC80D0C00DD5ED3 /* wxtObserve.h */,
+				B89700FD2CC80D0C00DD5ED3 /* wxtObserve.m */,
 				C8C1995A1C32D28700C2017B /* wxtClass.m */,
+				B88EAD242CC0AB1F0062F87C /* wxtClass+leilei.h */,
+				B88EAD252CC0AB1F0062F87C /* wxtClass+leilei.m */,
+				B88EAD212CC0AB060062F87C /* wxtClass+wangyuqi.h */,
+				B88EAD222CC0AB060062F87C /* wxtClass+wangyuqi.m */,
 				C82550701CAA7F2000CA6D3D /* wxtSubClass.h */,
 				C82550711CAA7F2000CA6D3D /* wxtSubClass.m */,
 				C8BBE4B61C34189200BE3E63 /* TableViewControllerDemo.h */,
 				C8BBE4B71C34189200BE3E63 /* TableViewControllerDemo.m */,
 				C8F1DC541CCE10E700897B59 /* MyInstance.h */,
 				C8F1DC551CCE10E700897B59 /* MyInstance.m */,
+				B811B9342CA81ED100BDD11C /* Location.gpx */,
+				B8DF6ACC2CB6380E009F5694 /* myUibutton.h */,
+				B8DF6ACD2CB6380E009F5694 /* myUibutton.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -380,10 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				C82B9C231C1DB27800FBBDEB /* main.m */,
-				C8314AE61C86C05C00BA8E46 /* KvcClass.h */,
-				C8314AE71C86C05C00BA8E46 /* KvcClass.m */,
-				C8314AE91C86D61C00BA8E46 /* KvoClass.h */,
-				C8314AEA1C86D61C00BA8E46 /* KvoClass.m */,
 				C8495C1C1D19140100EDACB9 /* tengxun.h */,
 				C8495C1D1D19140100EDACB9 /* tengxun.m */,
 				C8495C221D1914DC00EDACB9 /* qq.h */,
@@ -606,6 +619,7 @@
 			files = (
 				C86274421CBF5B8300B650D9 /* DIOpenSDK.bundle in Resources */,
 				C8A617531C29A4000070D101 /* DSC01425.JPG in Resources */,
+				B811B9352CA81ED100BDD11C /* Location.gpx in Resources */,
 				C88D659A1CA90C0D004E1D50 /* yycs.mp3 in Resources */,
 				C8A617551C29A44B0070D101 /* DSC01529.JPG in Resources */,
 				C82B9C2F1C1DB27800FBBDEB /* Assets.xcassets in Resources */,
@@ -637,24 +651,27 @@
 				C8BBE4B81C34189200BE3E63 /* TableViewControllerDemo.m in Sources */,
 				C814F8781C2AE73F00274CAF /* testclass.m in Sources */,
 				C87884F01C966A3500F51782 /* UIButton+AFNetworking.m in Sources */,
-				C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */,
 				C81333681CDB486700722AF2 /* SDWebImageCompat.m in Sources */,
 				C813336C1CDB486700722AF2 /* SDWebImageManager.m in Sources */,
 				C87884F11C966A3500F51782 /* UIImageView+AFNetworking.m in Sources */,
+				C8C1995B1C32D28700C2017B /* wxtClass.m in Sources */,
+				B88EAD262CC0AB1F0062F87C /* wxtClass+leilei.m in Sources */,
+				B88EAD232CC0AB060062F87C /* wxtClass+wangyuqi.m in Sources */,
 				C81333671CDB486700722AF2 /* SDImageCache.m in Sources */,
 				C8DCCA8E1C916CF600D789AC /* ASIHTTPRequest.m in Sources */,
 				C81333691CDB486700722AF2 /* SDWebImageDecoder.m in Sources */,
 				C87884F21C966A3500F51782 /* UIProgressView+AFNetworking.m in Sources */,
 				C8DCCA6E1C902B4D00D789AC /* codingData.m in Sources */,
+				B8DF6ACE2CB6380E009F5694 /* myUibutton.m in Sources */,
 				C813336A1CDB486700722AF2 /* SDWebImageDownloader.m in Sources */,
 				C87884ED1C966A3500F51782 /* AFImageDownloader.m in Sources */,
 				C87884EE1C966A3500F51782 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C87884F41C966A3500F51782 /* UIWebView+AFNetworking.m in Sources */,
 				C81333701CDB486700722AF2 /* UIImage+MultiFormat.m in Sources */,
 				C87884D61C96605700F51782 /* AFURLSessionManager.m in Sources */,
+				B89700FE2CC80D0C00DD5ED3 /* wxtObserve.m in Sources */,
 				C81333711CDB486700722AF2 /* UIImage+WebP.m in Sources */,
 				C82B9C2A1C1DB27800FBBDEB /* ViewController.m in Sources */,
-				C8314AEB1C86D61C00BA8E46 /* KvoClass.m in Sources */,
 				C875E12E1D2A42D9009434F5 /* UIImage+my_imageName.m in Sources */,
 				C82550721CAA7F2000CA6D3D /* wxtSubClass.m in Sources */,
 				C88D65921CA4EAB7004E1D50 /* blockViewViewController.m in Sources */,
@@ -684,7 +701,6 @@
 				C87884EC1C966A3500F51782 /* AFAutoPurgingImageCache.m in Sources */,
 				C8495C1E1D19140100EDACB9 /* tengxun.m in Sources */,
 				C87884D21C96605700F51782 /* AFNetworkReachabilityManager.m in Sources */,
-				C8314AE81C86C05C00BA8E46 /* KvcClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
