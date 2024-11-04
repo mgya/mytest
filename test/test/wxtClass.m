@@ -18,11 +18,29 @@
 
 
 
-@implementation wxtClass
+@implementation wxtClass{
+    
+    NSString *name2;
+}
 
 
 
 @synthesize a;
+
+
+-(void)changeName:(NSString*)name{
+    
+    [self willChangeValueForKey:@"name"];
+    
+    _name = name;
+    
+    [self didChangeValueForKey:@"name"];
+}
+
+-(void)setName:(NSString *)name{
+    _name = name;
+    name2 = @"xxxxxxxxx";
+}
 
 +(void)load{
     NSLog(@"wojiazaibaba");
@@ -52,6 +70,43 @@
     
 }
 
+-(NSString*)getName12{
+    return @"ddd";
+}
+
++(BOOL)accessInstanceVariablesDirectly{
+    return NO;
+}
+
+- (NSString *)get2{
+    return name2;
+}
+
++(BOOL)resolveInstanceMethod:(SEL)sel{
+    
+    
+    if (sel == @selector(find)) {
+        return NO;
+    }
+    
+    return [super resolveInstanceMethod:sel];
+}
+
+-(void)find{
+    NSLog(@"aaa");
+}
+
+
+
+
+-(void)woshishui{
+    [self myName];
+    
+}
+
+-(void)myName{
+    NSLog(@"I am wxt");
+}
 
 
 @end

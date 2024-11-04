@@ -11,13 +11,26 @@
 @interface wxtClass : NSObject<NSCopying>{
     }
 
+
+-(void)changeName:(NSString*)name;
 @property(assign,nonatomic)NSInteger age;
-@property(retain,nonatomic)NSString * name;
+@property(retain,nonatomic,readonly)NSString * name;
 -(void)printName;
 
-+(void)load;
 
+
+-(void)woshishui;
+
+
+-(NSString*)get2;
+
+-(void)find;
+
++(void)load;
++(BOOL)accessInstanceVariablesDirectly;
 @property(readonly)int a;
+
+
 
 
 @end

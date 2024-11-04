@@ -98,21 +98,19 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     wxtClass *wxt = [[wxtClass alloc] init];
     
     
-    [wxt addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:NULL];
-     
-     
-     
-     
     
     
     wxt.age = 10;
     [wxt printName];
     
-    wxt.name = @"ttt";
+    [wxt find];
+    
+    
+  //  wxt.name = @"ttt";
     
     NSLog(@"---%@",wxt.name) ;
     
-    [wxt setValue:@"wangxt" forKey:@"name"];
+  
     
     NSLog(@"---%@",[wxt valueForKey:@"age"]) ;
     
@@ -121,12 +119,18 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
     wxtObserve * wxtServer = [[wxtObserve alloc]init];
-    [wxt addObserver:wxtServer forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    [wxt addObserver:wxtServer forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
    
-    wxt.name = @"sss";
-  
+ //   wxt.name = @"sss";
     
+    [wxt valueForKey:@"name12"];
+    
+  
+    NSLog(@"--%@",[wxt get2]);
+    
+ 
+    [wxt changeName:@"qq"];
 //    gifView * vc = [[gifView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
 //    
 // 
@@ -225,12 +229,12 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     
     
     wxtClass * one = [[wxtClass alloc]init];
-    one.name = @"wxt";
+  //  one.name = @"wxt";
     
     
     wxtClass * p = [one copy];
     
-    one.name = @"1111";
+  //  one.name = @"1111";
     
  
     NSLog(@"value is %@",p.name);
@@ -349,11 +353,6 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
 }
 
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-    NSLog(@"gaibianla--self");
-    
-}
 
 
 -(void)openImage{

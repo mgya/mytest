@@ -18,9 +18,20 @@
         NSLog(@"%@", NSStringFromClass([self class]));
         NSLog(@"%@", NSStringFromClass([super class]));
     }
+    
+    [self woshishui];
+    [super woshishui];
     return self;
 }
 
 
+-(void)woshishui{
+    [self myName];
+    
+}
+
+-(void)myName{
+    NSLog(@"I am wxtsubClass");
+}
 
 @end
