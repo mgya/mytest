@@ -98,6 +98,51 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
     wxtClass *wxt = [[wxtClass alloc] init];
     
     
+    dispatch_queue_t myQueue;
+    
+    myQueue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_CONCURRENT);
+  
+  
+    dispatch_group_t group_t = dispatch_group_create();
+    
+    dispatch_group_async(group_t, myQueue, ^{
+        NSLog(@"-----计时1开始");
+        for (int i = 0; i<10000; i++) {
+            NSLog(@"%d",i);
+        }
+        NSLog(@"-----计时1结束");
+    });
+    
+    dispatch_group_async(group_t, myQueue, ^{
+        NSLog(@"-----计时2开始");
+        for (int i = 0; i<30000; i++) {
+            NSLog(@"%d",i);
+        }
+        NSLog(@"-----计时2结束");
+    });
+    
+    dispatch_group_notify(group_t, dispatch_get_main_queue(), ^{
+        NSLog(@"全部计时完成");
+    });
+    
+    dispatch_group_async(group_t, myQueue, ^{
+        NSLog(@"-----计时3开始");
+        for (int i = 0; i<50000; i++) {
+            NSLog(@"%d",i);
+        }
+        NSLog(@"-----计时3结束");
+    });
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     wxt.age = 10;
@@ -735,6 +780,7 @@ static NSString *const BaseURLString = @"http://www.raywenderlich.com/downloads/
         NSArray *resultArray = resultDict.allValues;
         NSLog(@"%@", resultArray);
     
+   
     
     //方法三
     //    NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:array];
